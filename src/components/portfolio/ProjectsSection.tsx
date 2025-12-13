@@ -16,14 +16,14 @@ const projects = [
     highlight: "Scalable pipeline for LLM-based counting systems",
   },
   {
-    title: "Food Image Classifier",
-    year: "2024-2025",
+    title: "Automated Textile Quality Inspection",
+    year: "2024",
     image: foodImage,
     description:
-      "Built a multi-class food image classifier (Pizza-Steak-Sushi) using a curated dataset and PyTorch. Experimented with CNN architectures and hyperparameter tuning to compare model performance.",
-    tools: ["PyTorch", "TinyVGG", "Transfer Learning", "CNNs"],
+      "Developed a defect detection system for GSM Textile Company using EfficientNet in PyTorch. Automated the classification of dyeing faults in real production lines, reducing manual inspection time.",
+    tools: ["Computer Vision", "PyTorch", "EfficientNet", "Industrial AI"],
     github: "https://github.com/Tinonturja",
-    highlight: "Comprehensive hyperparameter experimentation",
+    highlight: "Industrial AI for real-time defect detection",
   },
   {
     title: "Natural Dye-Sensitized Solar Cells",
