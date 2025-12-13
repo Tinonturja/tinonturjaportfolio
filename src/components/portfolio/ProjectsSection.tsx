@@ -2,6 +2,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sporeImage from "@/assets/project-spore.jpg";
 import foodImage from "@/assets/project-food.jpg";
+import dsscImage from "@/assets/project-dssc.jpg";
 
 const projects = [
   {
@@ -23,6 +24,16 @@ const projects = [
     tools: ["PyTorch", "TinyVGG", "Transfer Learning", "CNNs"],
     github: "https://github.com/Tinonturja",
     highlight: "Comprehensive hyperparameter experimentation",
+  },
+  {
+    title: "Natural Dye-Sensitized Solar Cells",
+    year: "2023",
+    image: dsscImage,
+    description:
+      "Fabricated Dye-Sensitized Solar Cells (DSSC) using natural photosensitizers extracted from Blue Pea flower petals and Dragon Fruit flesh. Constructed the photovoltaic setup and achieved an open-circuit voltage of 229.1 mV. Analyzed the photoelectrochemical function under the supervision of faculty at BUTEX.",
+    tools: ["Renewable Energy", "Material Science", "Research"],
+    github: null,
+    highlight: "Achieved 229.1 mV open-circuit voltage",
   },
 ];
 
@@ -84,17 +95,23 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Action Button */}
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={16} className="mr-2" />
-                    View on GitHub
-                    <ExternalLink size={14} className="ml-2" />
-                  </a>
-                </Button>
+                {project.github ? (
+                  <Button variant="outline" size="sm" asChild className="w-full">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={16} className="mr-2" />
+                      View on GitHub
+                      <ExternalLink size={14} className="ml-2" />
+                    </a>
+                  </Button>
+                ) : (
+                  <div className="w-full py-2 px-4 text-center text-sm text-muted-foreground border border-dashed border-border rounded-md">
+                    Research Project — No Repository
+                  </div>
+                )}
               </div>
             </div>
           ))}
