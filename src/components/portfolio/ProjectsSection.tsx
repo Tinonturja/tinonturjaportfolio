@@ -95,7 +95,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Action Button */}
-                {project.github ? (
+                {project.github && (
                   <Button variant="outline" size="sm" asChild className="w-full">
                     <a
                       href={project.github}
@@ -107,10 +107,6 @@ const ProjectsSection = () => {
                       <ExternalLink size={14} className="ml-2" />
                     </a>
                   </Button>
-                ) : (
-                  <div className="w-full py-2 px-4 text-center text-sm text-muted-foreground border border-dashed border-border rounded-md">
-                    Research Project — No Repository
-                  </div>
                 )}
               </div>
             </div>
