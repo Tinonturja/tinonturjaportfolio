@@ -18,21 +18,21 @@ const education = [
 const experience = [
   {
     role: "Part-Time Lab Lecturer & External Examinee",
-    company: "Bangladesh University of Textiles",
-    period: "Jan 2025 – Present",
-    description: "Teaching and evaluating students in textile engineering labs",
+    company: "Bangladesh University of Textiles (BUTEX)",
+    period: "January 2025 – Present",
+    description: "Served as an External Examinee for the course 'Software for Beginners'. Conducted viva and practical examinations to assess student proficiency in basic and advanced Microsoft Office tools (Word, PowerPoint). Evaluated technical competencies and provided structured feedback to students.",
+  },
+  {
+    role: "Intern (Industrial Attachment)",
+    company: "Fakir Knitwears Ltd.",
+    period: "March 2023 – May 2023",
+    description: "Conducted a comprehensive analysis of production planning and Supply Chain Management (SCM) workflows in a composite knitwear industry. Monitored ERP system usage for batch-wise capacity planning and real-time production scheduling. Implemented quality control checks using the 4-Point Inspection System to minimize fabric defects.",
   },
   {
     role: "Lecturer",
     company: "Udvash Academic and Admission Care",
-    period: "Mar 2018 – 2024",
-    description: "Taught over 10,000 students across various platforms",
-  },
-  {
-    role: "Intern",
-    company: "Fakir Knitwears Ltd.",
-    period: "Mar 2023 – May 2023",
-    description: "Industrial experience in textile manufacturing processes",
+    period: "March 2018 – 2024",
+    description: "Mentored over 10,000 students in offline and online platforms for science and engineering admission tests. Developed educational materials and conducted large-scale lecture sessions, demonstrating strong communication and public speaking skills.",
   },
 ];
 
