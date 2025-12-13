@@ -17,9 +17,8 @@ const HeroSection = () => {
               <span className="text-gradient">Real World</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up delay-200">
-              Designing efficient, real-world AI systems for edge and mobile
-              devices. Bridging the gap between cutting-edge research and
-              practical deployment.
+              Bridging Textile Engineering and Data Science to solve real-world
+              industrial problems through Computer Vision and Edge AI.
             </p>
 
             {/* CTA Buttons */}
