@@ -4,8 +4,8 @@ const education = [
   {
     degree: "M.Sc. in Computer Science and Engineering",
     institution: "United International University",
-    status: "Ongoing",
-    focus: "Focus: Data Science & Intelligent Systems",
+    status: "2025",
+    focus: "Major: Data Science",
   },
   {
     degree: "B.Sc. in Textile Engineering",
@@ -19,7 +19,7 @@ const testScores = [
   {
     test: "GRE",
     score: "313",
-    breakdown: "Quant: 151 | Verbal: 162 | AWA: 3.5",
+    breakdown: "Quant: 162 | Verbal: 151 | AWA: 3.5",
   },
   {
     test: "IELTS",
