@@ -21,6 +21,24 @@ const papers = [
     description: "A comprehensive survey synthesizing findings from 20+ state-of-the-art learned query optimization systems, presenting a structured taxonomy of LQO techniques including reinforcement learning, cost modeling, and hybrid hint-guided approaches.",
     tags: ["Database Systems", "Machine Learning", "Query Optimization", "Survey"],
     pdfUrl: "/papers/learned-query-optimization.pdf"
+  },
+  {
+    title: "Automated Density-Based Splitting of Merged Clusters",
+    description: "Introduces a novel density-based recursive splitting mechanism for K-means clustering that automatically detects clusters by identifying low-density regions, eliminating the need for prior knowledge of the ideal cluster count.",
+    tags: ["Machine Learning", "Clustering", "K-means", "Unsupervised Learning"],
+    pdfUrl: "/papers/density-based-clustering.pdf"
+  },
+  {
+    title: "Fabric Defect Detection Using Histogram Equalization and Convolutional Neural Network",
+    description: "Proposes an automated fabric defect detection method using histogram equalization for preprocessing and ResNet-50 CNN for classification, achieving improved detection of low-contrast defects in grey fabrics for industrial quality control.",
+    tags: ["Computer Vision", "CNN", "ResNet-50", "Textile", "Quality Control"],
+    pdfUrl: "/papers/fabric-defect-detection.pdf"
+  },
+  {
+    title: "An Intelligent Irrigation Decision Support System using IoT and Weather Data",
+    description: "Presents an intelligent irrigation system integrating IoT sensors, environmental parameters, and real-time weather forecasts to optimize irrigation scheduling, demonstrating potential water savings of 30-50% for sustainable agriculture.",
+    tags: ["IoT", "Smart Agriculture", "ESP32", "Weather Forecasting", "Sensors"],
+    pdfUrl: "/papers/intelligent-irrigation-iot.pdf"
   }
 ];
 
