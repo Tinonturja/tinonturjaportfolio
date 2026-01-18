@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Spore Detection & Classification",
     year: "2025",
-    image: sporeImage,
+    image: null,
     description:
       "Developed a custom computer vision pipeline to detect and classify multiple fungal spore types from microscopic slide images. Included training workflow with preprocessing, augmentation, training, loss analysis, and evaluation.",
     tools: ["PyTorch", "EfficientNet-B0", "Transfer Learning", "Image Processing"],
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Automated Textile Quality Inspection",
     year: "2024",
-    image: foodImage,
+    image: null,
     description:
       "Developed a defect detection system for GSM Textile Company using EfficientNet in PyTorch. Automated the classification of dyeing faults in real production lines, reducing manual inspection time.",
     tools: ["Computer Vision", "PyTorch", "EfficientNet", "Industrial AI"],
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Natural Dye-Sensitized Solar Cells",
     year: "2023",
-    image: dsscImage,
+    image: null,
     description:
       "Fabricated Dye-Sensitized Solar Cells (DSSC) using natural photosensitizers extracted from Blue Pea flower petals and Dragon Fruit flesh. Constructed the photovoltaic setup and achieved an open-circuit voltage of 229.1 mV. Analyzed the photoelectrochemical function under the supervision of faculty at BUTEX.",
     tools: ["Renewable Energy", "Material Science", "Research"],
@@ -57,23 +57,13 @@ const ProjectsSection = () => {
               className="group bg-card rounded-xl border border-border overflow-hidden hover-lift animate-fade-up"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Project Image */}
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                <span className="absolute top-4 right-4 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
-                  {project.year}
-                </span>
-              </div>
+  
 
               {/* Project Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {project.title}
+                  <span className="ml-2 text-sm text-muted-foreground">({project.year})</span>
                 </h3>
                 <p className="text-sm text-primary font-medium mb-3">
                   {project.highlight}
