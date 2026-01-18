@@ -5,6 +5,13 @@ import foodImage from "@/assets/project-food.jpg";
 import dsscImage from "@/assets/project-dssc.jpg";
 
 const projects = [
+  { title: "Smart Dye – AI-Driven Water-Efficient Dyeing System", 
+   year: "2025", 
+   image: null, 
+   description: "An AI-powered textile dyeing optimization system that predicts color shifts across lab, pilot, and bulk scales, detects dyeing endpoints in real time, and reduces water usage by minimizing re-washing and re-dyeing through closed-loop machine learning control.", 
+   tools: [ "Machine Learning", "Computer Vision", "Time-Series Analysis", "Predictive Modeling", "Industrial AI", "Textile Engineering", "Water Sustainability" ], 
+   github: null, 
+   highlight: "AI-driven water reduction and shade consistency in industrial dyeing" },
   {
     title: "Spore Detection & Classification",
     year: "2025",
