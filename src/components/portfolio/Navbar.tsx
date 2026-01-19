@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Research", href: "#research" },
   { label: "Certifications", href: "#certifications" },
   { label: "Experience", href: "#experience" },
+  { label: "Resume", href: "/ACADEMIC_CV.pdf", external: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -43,7 +44,10 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors yellow-underline"
+                onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
