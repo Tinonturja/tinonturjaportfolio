@@ -29,22 +29,22 @@ const papers = [
     title: "Automated Density-Based Splitting of Merged Clusters",
     description: "Introduces a novel density-based recursive splitting mechanism for K-means clustering that automatically detects clusters by identifying low-density regions, eliminating the need for prior knowledge of the ideal cluster count.",
     tags: ["Machine Learning", "Clustering", "K-means", "Unsupervised Learning"],
-    pdfUrl: "/papers/density-based-clustering.pdf",
-    thumbnailUrl: "/papers/thumbnails/density-based-clustering.jpg"
+    pdfUrl: "/papers/Automated_Density_Based_Splitting_of_Merged_Clusters (1).pdf",
+    thumbnailUrl: "/papers/thumbnails/Automated_Density_Based_Splitting_of_Merged_Clusters (1).jpg"
   },
   {
     title: "Fabric Defect Detection Using Histogram Equalization and Convolutional Neural Network",
     description: "Proposes an automated fabric defect detection method using histogram equalization for preprocessing and ResNet-50 CNN for classification, achieving improved detection of low-contrast defects in grey fabrics for industrial quality control.",
     tags: ["Computer Vision", "CNN", "ResNet-50", "Textile", "Quality Control"],
-    pdfUrl: "/papers/fabric-defect-detection.pdf",
-    thumbnailUrl: "/papers/thumbnails/fabric-defect-detection.jpg"
+    pdfUrl: "/papers/fabric_defect_detection.pdf",
+    thumbnailUrl: "/papers/thumbnails/fabric_defect_detection.jpg"
   },
   {
     title: "An Intelligent Irrigation Decision Support System using IoT and Weather Data",
     description: "Presents an intelligent irrigation system integrating IoT sensors, environmental parameters, and real-time weather forecasts to optimize irrigation scheduling, demonstrating potential water savings of 30-50% for sustainable agriculture.",
     tags: ["IoT", "Smart Agriculture", "ESP32", "Weather Forecasting", "Sensors"],
-    pdfUrl: "/papers/intelligent-irrigation-iot.pdf",
-    thumbnailUrl: "/papers/thumbnails/intelligent-irrigation-iot.jpg"
+    pdfUrl: "/papers/IoT_project.pdf",
+    thumbnailUrl: "/papers/thumbnails/IoT_project.pdf"
   }
 ];
 
@@ -57,7 +57,7 @@ const ResearchPapersSection = () => {
             Research Papers
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            The following are IEEE-format conference-style research papers completed as part of my university coursework and independent study. These papers are not published yet. Ongoing and publishable research works are not included here.
+            The following are IEEE-format conference-style research papers completed as part of my university coursework and independent study. These papers are not published yet. Ongoing and publishable research works are included here.
           </p>
         </div>
 
