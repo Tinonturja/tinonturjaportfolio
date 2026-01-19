@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Research", href: "#research" },
   { label: "Certifications", href: "#certifications" },
   { label: "Experience", href: "#experience" },
-  { label: "Resume", href: "/ACADEMIC_CV.pdf", external: true },
+  { label: "Resume", href: "/CV.pdf", external: true },
   { label: "Contact", href: "#contact" },
 ];
 
