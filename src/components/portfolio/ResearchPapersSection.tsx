@@ -23,28 +23,28 @@ const papers = [
     description: "A comprehensive survey synthesizing findings from 20+ state-of-the-art learned query optimization systems, presenting a structured taxonomy of LQO techniques including reinforcement learning, cost modeling, and hybrid hint-guided approaches.",
     tags: ["Database Systems", "Machine Learning", "Query Optimization", "Survey"],
     pdfUrl: "/papers/learned-query-optimization.pdf",
-    thumbnailUrl: "/papers/thumbnails/learned-query-optimization.jpg"
+    thumbnailUrl: "/papers/thumbnails/LearnedQueryOptimizationThumbnail_page-0001.jpg"
   },
   {
     title: "Automated Density-Based Splitting of Merged Clusters",
     description: "Introduces a novel density-based recursive splitting mechanism for K-means clustering that automatically detects clusters by identifying low-density regions, eliminating the need for prior knowledge of the ideal cluster count.",
     tags: ["Machine Learning", "Clustering", "K-means", "Unsupervised Learning"],
     pdfUrl: "/papers/Automated_Density_Based_Splitting_of_Merged_Clusters (1).pdf",
-    thumbnailUrl: "/papers/thumbnails/Automated_Density_Based_Splitting_of_Merged_Clusters (1).jpg"
+    thumbnailUrl: "/papers/thumbnails/Automated_Density_Based_Splitting_of_Merged_Clusters_thumbnail_page-0001.jpg"
   },
   {
     title: "Fabric Defect Detection Using Histogram Equalization and Convolutional Neural Network",
     description: "Proposes an automated fabric defect detection method using histogram equalization for preprocessing and ResNet-50 CNN for classification, achieving improved detection of low-contrast defects in grey fabrics for industrial quality control.",
     tags: ["Computer Vision", "CNN", "ResNet-50", "Textile", "Quality Control"],
     pdfUrl: "/papers/fabric_defect_detection.pdf",
-    thumbnailUrl: "/papers/thumbnails/fabric_defect_detection.jpg"
+    thumbnailUrl: "/papers/thumbnails/fabric_defect_detection_thumbnail_page-0001.jpg"
   },
   {
     title: "An Intelligent Irrigation Decision Support System using IoT and Weather Data",
     description: "Presents an intelligent irrigation system integrating IoT sensors, environmental parameters, and real-time weather forecasts to optimize irrigation scheduling, demonstrating potential water savings of 30-50% for sustainable agriculture.",
     tags: ["IoT", "Smart Agriculture", "ESP32", "Weather Forecasting", "Sensors"],
     pdfUrl: "/papers/IoT_project.pdf",
-    thumbnailUrl: "/papers/thumbnails/IoT_project.jpg"
+    thumbnailUrl: "/papers/thumbnails/IoT_project_thumbnail_page-0001.jpg"
   }
 ];
 
@@ -71,8 +71,8 @@ const ResearchPapersSection = () => {
               <div className="relative h-48 overflow-hidden bg-muted">
                 <img 
                   src={paper.thumbnailUrl} 
-                  alt={`${paper.title} preview`}
-                  className="max-h-full max-w-full object-contain"
+                  alt={`${paper.title} - First page preview`}
+                  className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
