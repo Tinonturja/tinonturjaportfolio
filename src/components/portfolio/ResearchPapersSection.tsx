@@ -44,7 +44,7 @@ const papers = [
     description: "Presents an intelligent irrigation system integrating IoT sensors, environmental parameters, and real-time weather forecasts to optimize irrigation scheduling, demonstrating potential water savings of 30-50% for sustainable agriculture.",
     tags: ["IoT", "Smart Agriculture", "ESP32", "Weather Forecasting", "Sensors"],
     pdfUrl: "/papers/IoT_project.pdf",
-    thumbnailUrl: "/papers/thumbnails/IoT_project.pdf"
+    thumbnailUrl: "/papers/thumbnails/IoT_project.jpg"
   }
 ];
 
@@ -71,8 +71,8 @@ const ResearchPapersSection = () => {
               <div className="relative h-48 overflow-hidden bg-muted">
                 <img 
                   src={paper.thumbnailUrl} 
-                  alt={`${paper.title} - First page preview`}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                  alt={`${paper.title} preview`}
+                  className="max-h-full max-w-full object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
