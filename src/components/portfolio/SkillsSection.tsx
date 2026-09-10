@@ -2,10 +2,11 @@ import { Github } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Core AI/ML",
+    title: "Machine Learning & AI",
     skills: [
       "Machine Learning",
       "Deep Learning",
+      "Physics-Informed Neural Networks",
       "Computer Vision",
       "Image Processing",
       "NLP",
@@ -18,26 +19,27 @@ const skillCategories = [
     ],
   },
   {
-    title: "Tools & Frameworks",
+    title: "Computational & Materials Science",
     skills: [
-      "PyTorch",
-      "Python",
-      "LangChain",
-      "Hugging Face",
-      "SQL",
-      "Scikit-Learn",
-      "OpenCV",
-      "MiniZinc",
-      "PDDL",
+      "Molecular Dynamics (GROMACS)",
+      "DFT (Gaussian, B3LYP/6-31G(d))",
+      "Adsorption Kinetics (PSO/PFO)",
+      "Isotherm Modeling (Freundlich/Langmuir)",
+      "Gaussian Process Regression",
+      "LaTeX (Overleaf, MiKTeX)",
     ],
   },
   {
-    title: "Other Technical",
+    title: "Engineering & Deployment",
     skills: [
+      "Python (SciPy, Scikit-Learn)",
+      "PyTorch",
+      "LangChain",
+      "Hugging Face",
+      "OpenCV",
+      "SQL",
       "IoT Systems",
-      "Smart Parking",
       "Edge-Cloud Inference",
-      "Data Preprocessing",
       "Model Deployment",
       "Git/GitHub",
       "Statistical Analysis",
@@ -51,11 +53,13 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 md:py-32 bg-card/30">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Skills & <span className="text-gradient">Expertise</span>
+          <p className="section-eyebrow justify-center flex">Skills</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Skills &amp; <span className="text-gradient">Expertise</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building end-to-end AI solutions
+            A toolkit spanning applied ML engineering and computational
+            research
           </p>
         </div>
 

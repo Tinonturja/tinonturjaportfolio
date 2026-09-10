@@ -3,15 +3,19 @@ import { GraduationCap, Award } from "lucide-react";
 const education = [
   {
     degree: "M.Sc. in Computer Science and Engineering",
-    institution: "United International University",
-    status: "2025",
-    focus: "Major: Data Science",
+    institution: "United International University (UIU), Bangladesh",
+    status: "2024 – 2025",
+    focus: "Major: Data Science · CGPA: 3.61/4.00",
+    note:
+      "Entered from a non-CS background via bridging coursework in Object-Oriented Programming and Data Structures & Algorithms, then AI, Machine Learning, Deep Learning, NLP, Big Data, Advanced Database Systems, and Research Methodology.",
   },
   {
     degree: "B.Sc. in Textile Engineering",
-    institution: "Bangladesh University of Textiles",
-    status: "2023",
-    focus: "Major: Dyes and Chemicals Engineering",
+    institution: "Bangladesh University of Textiles (BUTEX)",
+    status: "2018 – 2023",
+    focus: "Major: Dyes & Chemicals Engineering · CGPA: 3.05/4.00",
+    note:
+      "Strong quantitative core for a non-CS degree — calculus, linear algebra, ODEs & complex variables, and a full statistics sequence (probability, hypothesis testing, regression, design of experiments).",
   },
 ];
 
@@ -33,11 +37,13 @@ const EducationSection = () => {
     <section id="education" className="py-20 md:py-32">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            <span className="text-gradient">Education</span>
+          <p className="section-eyebrow justify-center flex">Education</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Academic <span className="text-gradient">Foundation</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Academic foundation bridging engineering and data science
+            Bridging engineering and data science — a deliberate transition,
+            not a detour
           </p>
         </div>
 
@@ -63,8 +69,11 @@ const EducationSection = () => {
                   <p className="text-muted-foreground text-sm mb-1">
                     {edu.institution}
                   </p>
-                  <p className="text-primary text-sm font-medium">
+                  <p className="text-primary text-sm font-medium mb-3">
                     {edu.focus}
+                  </p>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    {edu.note}
                   </p>
                 </div>
               </div>
@@ -89,7 +98,7 @@ const EducationSection = () => {
                 key={test.test}
                 className="bg-card rounded-xl border border-border p-6 text-center hover-lift"
               >
-                <div className="text-4xl font-bold text-primary mb-2">
+                <div className="text-4xl font-bold text-primary mb-2 font-serif">
                   {test.score}
                 </div>
                 <div className="text-xl font-bold text-foreground mb-2">

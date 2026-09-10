@@ -2,9 +2,10 @@ import Navbar from "@/components/portfolio/Navbar";
 import HeroSection from "@/components/portfolio/HeroSection";
 import AboutSection from "@/components/portfolio/AboutSection";
 import EducationSection from "@/components/portfolio/EducationSection";
-import SkillsSection from "@/components/portfolio/SkillsSection";
-import ProjectsSection from "@/components/portfolio/ProjectsSection";
+import PublicationsSection from "@/components/portfolio/PublicationsSection";
 import ResearchPapersSection from "@/components/portfolio/ResearchPapersSection";
+import ProjectsSection from "@/components/portfolio/ProjectsSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
 import CertificationsSection from "@/components/portfolio/CertificationsSection";
 import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ContactSection from "@/components/portfolio/ContactSection";
@@ -17,9 +18,10 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <EducationSection />
-      <SkillsSection />
-      <ProjectsSection />
+      <PublicationsSection />
       <ResearchPapersSection />
+      <ProjectsSection />
+      <SkillsSection />
       <CertificationsSection />
       <ExperienceSection />
       <ContactSection />

@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
+  { label: "Publications", href: "#publications" },
   { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Certifications", href: "#certifications" },
+  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Resume", href: "/CV.pdf", external: true },
+  { label: "CV", href: "/CV.pdf", external: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,12 +33,12 @@ const Navbar = () => {
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="text-xl md:text-2xl font-bold text-foreground">
+          <a href="#" className="text-xl md:text-2xl font-serif font-bold text-foreground">
             Tinon<span className="text-primary">.</span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -75,6 +74,8 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
                 className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >

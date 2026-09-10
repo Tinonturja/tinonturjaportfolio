@@ -1,9 +1,9 @@
-import { Brain, Eye, MessageSquare, Cpu } from "lucide-react";
+import { Brain, Atom, Eye, Cpu } from "lucide-react";
 
 const specializations = [
   { icon: Brain, label: "Machine Learning", color: "text-primary" },
+  { icon: Atom, label: "Physics-Informed ML", color: "text-primary" },
   { icon: Eye, label: "Computer Vision", color: "text-primary" },
-  { icon: MessageSquare, label: "NLP", color: "text-primary" },
   { icon: Cpu, label: "Edge AI", color: "text-primary" },
 ];
 
@@ -12,35 +12,54 @@ const AboutSection = () => {
     <section id="about" className="py-20 md:py-32">
       <div className="section-container">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-            About <span className="text-gradient">Me</span>
+          <p className="section-eyebrow justify-center flex">About</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            Bridging <span className="text-gradient">Engineering and Intelligence</span>
           </h2>
           <p className="text-muted-foreground text-center mb-12">
-            Bridging Engineering and Intelligence
+            Data Science graduate researcher · prospective PhD / research-based MS candidate
           </p>
 
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p className="animate-fade-up">
-              I am a{" "}
+              I'm a{" "}
               <span className="text-foreground font-semibold">
-                Machine Learning and Computer Vision practitioner
+                Data Science graduate student
               </span>{" "}
-              with a strong interest in building efficient, real-world AI
-              systems for edge and mobile devices.
+              working at the intersection of{" "}
+              <span className="text-foreground font-semibold">
+                physics-informed machine learning, computational materials
+                science, and computer vision
+              </span>{" "}
+              — building models that stay grounded in the physics and
+              chemistry of the systems they describe, rather than treating
+              them as black boxes.
             </p>
             <p className="animate-fade-up delay-100">
-              My background spans{" "}
+              My path started in{" "}
               <span className="text-foreground font-semibold">
-                textile engineering, data science, IoT automation
+                textile engineering
               </span>
-              , and deployment-focused deep learning — a unique combination that
-              gives me a holistic perspective on solving complex engineering
-              challenges.
+              , where I worked directly with dyeing chemistry, biomaterials,
+              and process data. That background now feeds my current
+              research: coupling molecular dynamics (GROMACS) and DFT
+              (Gaussian) simulations with physics-informed neural networks to
+              model reactive-dye adsorption on sustainable, waste-derived
+              biofilms — work that has produced a preprint manuscript, with a
+              second paper in preparation.
             </p>
             <p className="animate-fade-up delay-200">
-              I enjoy designing end-to-end AI pipelines, experimenting with
-              lightweight models, and applying machine learning to solve
-              practical, high-impact problems that make a real difference.
+              In parallel, I build applied ML systems — edge-deployed computer
+              vision for industrial defect detection, IoT sensing pipelines,
+              and LLM/RAG tooling — because I believe research is strongest
+              when it stays connected to systems that actually have to run.
+              I'm now looking for{" "}
+              <span className="text-foreground font-semibold">
+                PhD and research-based Master's opportunities
+              </span>{" "}
+              where I can keep working at this intersection of
+              physics-informed ML, materials and process modeling, and
+              applied computer vision.
             </p>
           </div>
 

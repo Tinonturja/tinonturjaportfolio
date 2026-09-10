@@ -53,24 +53,25 @@ const ResearchPapersSection = () => {
     <section id="research" className="py-20 bg-secondary/30">
       <div className="section-container">
         <div className="text-center mb-12">
+          <p className="section-eyebrow justify-center flex">Coursework &amp; Independent Study</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
             Research Papers
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            The following are IEEE-format conference-style research papers completed as part of my university coursework and independent study. These papers are not published yet. Ongoing and publishable research works are included here.
+            IEEE-format papers completed as part of university coursework and independent study — distinct from the peer-reviewed-track manuscripts above.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {papers.map((paper, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover-lift flex flex-col overflow-hidden"
             >
               {/* Paper Thumbnail */}
               <div className="relative h-48 overflow-hidden bg-muted">
-                <img 
-                  src={paper.thumbnailUrl} 
+                <img
+                  src={paper.thumbnailUrl}
                   alt={`${paper.title} - First page preview`}
                   className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
@@ -91,7 +92,7 @@ const ResearchPapersSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
               </div>
-              
+
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg leading-tight line-clamp-2">
                   {paper.title}
@@ -113,9 +114,9 @@ const ResearchPapersSection = () => {
                     </Badge>
                   )}
                 </div>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="w-full mt-auto"
                   asChild
                 >

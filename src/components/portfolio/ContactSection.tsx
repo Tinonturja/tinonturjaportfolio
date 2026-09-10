@@ -22,12 +22,14 @@ const ContactSection = () => {
     <section id="contact" className="py-20 md:py-32 bg-card/30">
       <div className="section-container">
         <div className="text-center mb-16">
+          <p className="section-eyebrow justify-center flex">Contact</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's discuss how I can help bring your AI
-            vision to life.
+            Open to PhD and research-based Master's opportunities, as well as
+            research collaborations. Feel free to reach out through any of
+            the channels below.
           </p>
         </div>
 
@@ -38,8 +40,7 @@ const ContactSection = () => {
               Contact Information
             </h3>
             <p className="text-muted-foreground mb-8">
-              Feel free to reach out through any of these channels. I typically
-              respond within 24-48 hours.
+              I typically respond within 24-48 hours.
             </p>
 
             <div className="space-y-6">
@@ -59,7 +60,7 @@ const ContactSection = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/tinon-turja-07b058202/"
+                href="https://www.linkedin.com/in/tinon-turja-majumder-07b058202/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"

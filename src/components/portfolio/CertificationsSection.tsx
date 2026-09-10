@@ -30,6 +30,7 @@ const CertificationsSection = () => {
     <section id="certifications" className="py-20 bg-secondary/30">
       <div className="section-container">
         <div className="text-center mb-12">
+          <p className="section-eyebrow justify-center flex">Certifications</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Certifications & <span className="text-primary">Courses</span>
           </h2>

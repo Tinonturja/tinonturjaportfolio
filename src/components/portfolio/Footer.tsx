@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold text-foreground">
+            <a href="#" className="text-xl font-serif font-bold text-foreground">
               Tinon<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-1">
@@ -27,7 +27,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/tinon-turja-07b058202/"
+              href="https://www.linkedin.com/in/tinon-turja-majumder-07b058202/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
