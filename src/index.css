@@ -6,34 +6,34 @@
 
 @layer base {
   :root {
-    /* Light, subtle academic theme: white background, ink text, one muted brown accent */
+    /* Light, subtle academic theme: white background, ink text, one maroon accent (#7A0019) */
     --background: 0 0% 100%;
-    --foreground: 25 20% 13%;
+    --foreground: 350 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 20% 13%;
+    --card-foreground: 350 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 13%;
+    --popover-foreground: 350 15% 12%;
 
-    --primary: 24 42% 30%;
+    --primary: 346 100% 24%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 25% 96%;
-    --secondary-foreground: 25 20% 18%;
+    --secondary: 350 20% 97%;
+    --secondary-foreground: 350 15% 18%;
 
-    --muted: 30 18% 94%;
-    --muted-foreground: 25 8% 38%;
+    --muted: 350 12% 95%;
+    --muted-foreground: 350 6% 38%;
 
-    --accent: 24 42% 30%;
+    --accent: 346 100% 24%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 87%;
-    --input: 30 15% 87%;
-    --ring: 24 42% 30%;
+    --border: 350 10% 88%;
+    --input: 350 10% 88%;
+    --ring: 346 100% 24%;
 
     --radius: 0.5rem;
 
@@ -42,7 +42,7 @@
     --glow-yellow-strong: 0 8px 24px hsl(25 20% 13% / 0.08);
     --gradient-dark: hsl(0 0% 100%);
     --gradient-card: hsl(0 0% 100%);
-    --gradient-yellow: linear-gradient(0deg, hsl(24 42% 30%) 0%, hsl(24 42% 30%) 100%);
+    --gradient-yellow: linear-gradient(0deg, hsl(346 100% 24%) 0%, hsl(346 100% 24%) 100%);
   }
 
 
