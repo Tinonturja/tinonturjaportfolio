@@ -42,7 +42,7 @@ export const news: { date: string; text: ReactNode }[] = [
   },
   {
     date: "Mar 2026",
-    text: <>Started as Lead Research Assistant on SMART DYEING, funded by BIRDI after four rounds of review.</>,
+    text: <>Started as Lead Research Assistant on SMART DYEING, funded by the Asian Development Bank through BIRDI (SICIP) after four rounds of review.</>,
   },
   {
     date: "Aug 2025",

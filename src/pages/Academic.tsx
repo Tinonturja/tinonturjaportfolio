@@ -235,8 +235,8 @@ const Academic = () => (
             chemistry and physics of a process, developed on laboratory and industrial plant data.
           </p>
           <p>
-            I currently lead the data and modelling work on SMART DYEING, a BIRDI-funded project at Bangladesh University
-            of Textiles that aims at closed-loop control to reduce chemical, water and energy use in industrial knit
+            I currently lead the data and modelling work on SMART DYEING, a project at Bangladesh University
+            of Textiles, funded by the Asian Development Bank through BIRDI (SICIP), that aims at closed-loop control to reduce chemical, water and energy use in industrial knit
             dyeing. I am preparing to apply for PhD programs.
           </p>
         </div>
@@ -349,7 +349,7 @@ const Academic = () => (
             </dd>
             <Label>Setting</Label>
             <dd className="text-muted-foreground">
-              Funded by BIRDI (BDT 2.18 crore, about US$177,000). PI: Prof. Dr. Mohammad Forhad Hossain. Fieldwork at the
+              Funded by the Asian Development Bank through BIRDI under SICIP (BDT 2.18 crore, about US$177,000). PI: Prof. Dr. Mohammad Forhad Hossain. Fieldwork at the
               DBL Group fabric division. I wrote and defended the proposal and lead the data and modelling work.
             </dd>
             <Label>What I built</Label>
