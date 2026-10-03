@@ -389,7 +389,7 @@ const Academic = () => (
             </div>
             <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
               Training versus leave-one-out R² for the six models compared on the adsorption-kinetics data (figure from
-              the preprint analysis). The physics-constrained network has the highest leave-one-out R² and the smallest
+              the ChemRxiv preprint). The physics-constrained network has the highest leave-one-out R² and the smallest
               gap between training and held-out performance.
             </figcaption>
           </figure>
