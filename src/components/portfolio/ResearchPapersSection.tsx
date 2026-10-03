@@ -3,9 +3,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const papers = [
+const papers: {
+  title: string;
+  authors: string;
+  description: string;
+  tags: string[];
+  pdfUrl: string | null;
+  thumbnailUrl: string | null;
+}[] = [
   {
     title: "A Comprehensive Smart Parking System in Context of Bangladesh: Bilingual License Plate Detection and Real-Time Space Availability Using IoT and WSN",
+    authors: "Md. Motaharul Islam, Tinon Turja Majumder",
     description: "Proposes an IoT-based smart parking system with bilingual (English & Bangla) license plate recognition using CNN, integrated with Wireless Sensor Networks for real-time parking space detection and a mobile application for urban traffic management.",
     tags: ["IoT", "WSN", "CNN", "Computer Vision", "Smart City"],
     pdfUrl: "/papers/smart-parking-system.pdf",
@@ -13,35 +21,40 @@ const papers = [
   },
   {
     title: "Efficient-FashionBERT: A Scalable Two-Tower Model for Cross-Modal Fashion Retrieval",
-    description: "A scalable dual-encoder framework combining BERT and Vision Transformer (ViT) for fashion e-commerce retrieval, achieving Recall@10 of 95.8% with 70% lower inference latency using contrastive learning and FAISS vector search.",
+    authors: "Tinon Turja Majumder",
+    description: "A dual-encoder framework combining BERT and Vision Transformer (ViT) for fashion retrieval, trained with contrastive learning and indexed with FAISS; Recall@10 of 95.8% on ~44k pairs from the Fashion Product Images dataset.",
     tags: ["Deep Learning", "BERT", "ViT", "FAISS", "Multimodal AI"],
     pdfUrl: "/papers/efficient-fashionbert.pdf",
     thumbnailUrl: "/papers/thumbnails/efficient-fashionbert.jpg"
   },
   {
     title: "Learned Query Optimization in Modern Database Systems: A Comprehensive Survey",
-    description: "A comprehensive survey synthesizing findings from 20+ state-of-the-art learned query optimization systems, presenting a structured taxonomy of LQO techniques including reinforcement learning, cost modeling, and hybrid hint-guided approaches.",
+    authors: "Tinon Turja Majumder",
+    description: "A survey of 20+ learned query optimization systems, with a taxonomy covering learned cost models, learning-to-rank, reinforcement learning and hybrid hint-guided approaches.",
     tags: ["Database Systems", "Machine Learning", "Query Optimization", "Survey"],
     pdfUrl: "/papers/learned-query-optimization.pdf",
     thumbnailUrl: "/papers/thumbnails/LearnedQueryOptimizationThumbnail_page-0001.jpg"
   },
   {
     title: "Automated Density-Based Splitting of Merged Clusters",
-    description: "Introduces a novel density-based recursive splitting mechanism for K-means clustering that automatically detects clusters by identifying low-density regions, eliminating the need for prior knowledge of the ideal cluster count.",
+    authors: "Md. Mahir Uddin, Tinon Turja Majumder",
+    description: "A density-based recursive splitting mechanism for K-means clustering that detects clusters by identifying low-density regions, removing the need to choose the cluster count in advance.",
     tags: ["Machine Learning", "Clustering", "K-means", "Unsupervised Learning"],
     pdfUrl: "/papers/Automated_Density_Based_Splitting_of_Merged_Clusters (1).pdf",
     thumbnailUrl: "/papers/thumbnails/Automated_Density_Based_Splitting_of_Merged_Clusters_thumbnail_page-0001.jpg"
   },
   {
     title: "Fabric Defect Detection Using Histogram Equalization and Convolutional Neural Network",
-    description: "Proposes an automated fabric defect detection method using histogram equalization for preprocessing and ResNet-50 CNN for classification, achieving improved detection of low-contrast defects in grey fabrics for industrial quality control.",
+    authors: "Tinon Turja Majumder, Md. Mahir Uddin",
+    description: "Histogram equalization for preprocessing and a ResNet-50 classifier on 25,600 fabric images; equalization improved recall on low-contrast defects at the cost of overall accuracy (87.1% vs 90.2%) under class imbalance.",
     tags: ["Computer Vision", "CNN", "ResNet-50", "Textile", "Quality Control"],
-    pdfUrl: "/papers/fabric_defect_detection.pdf",
-    thumbnailUrl: "/papers/thumbnails/fabric_defect_detection_thumbnail_page-0001.jpg"
+    pdfUrl: null,
+    thumbnailUrl: null
   },
   {
     title: "An Intelligent Irrigation Decision Support System using IoT and Weather Data",
-    description: "Presents an intelligent irrigation system integrating IoT sensors, environmental parameters, and real-time weather forecasts to optimize irrigation scheduling, demonstrating potential water savings of 30-50% for sustainable agriculture.",
+    authors: "Tinon Turja Majumder, Md. Mahir Uddin, Md. Mokit Hossain",
+    description: "An irrigation decision-support system combining IoT soil and environmental sensors with weather forecasts to schedule irrigation.",
     tags: ["IoT", "Smart Agriculture", "ESP32", "Weather Forecasting", "Sensors"],
     pdfUrl: "/papers/IoT_project.pdf",
     thumbnailUrl: "/papers/thumbnails/IoT_project_thumbnail_page-0001.jpg"
@@ -53,12 +66,12 @@ const ResearchPapersSection = () => {
     <section id="research" className="py-20 bg-secondary/30">
       <div className="section-container">
         <div className="text-center mb-12">
-          <p className="section-eyebrow justify-center flex">Coursework &amp; Independent Study</p>
+          <p className="section-eyebrow justify-center flex">MSc Coursework · United International University</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-            Research Papers
+            Course Project Reports
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            IEEE-format papers completed as part of university coursework and independent study — distinct from the peer-reviewed-track manuscripts above.
+            Unpublished reports written for MSc courses. None has been submitted to a journal; they are listed to show coursework, not as publications.
           </p>
         </div>
 
@@ -69,6 +82,7 @@ const ResearchPapersSection = () => {
               className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover-lift flex flex-col overflow-hidden"
             >
               {/* Paper Thumbnail */}
+              {paper.thumbnailUrl && (
               <div className="relative h-48 overflow-hidden bg-muted">
                 <img
                   src={paper.thumbnailUrl}
@@ -92,11 +106,15 @@ const ResearchPapersSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
               </div>
+              )}
 
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg leading-tight line-clamp-2">
                   {paper.title}
                 </CardTitle>
+                <p className="text-xs text-muted-foreground mt-2 italic">
+                  {paper.authors} · MSc course project (unpublished)
+                </p>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
                 <CardDescription className="text-sm text-muted-foreground mb-4 flex-1 line-clamp-3">
@@ -114,6 +132,7 @@ const ResearchPapersSection = () => {
                     </Badge>
                   )}
                 </div>
+                {paper.pdfUrl && (
                 <Button
                   variant="outline"
                   size="sm"
@@ -122,9 +141,10 @@ const ResearchPapersSection = () => {
                 >
                   <a href={paper.pdfUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    View Paper
+                    View Report
                   </a>
                 </Button>
+                )}
               </CardContent>
             </Card>
           ))}

@@ -4,23 +4,13 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "Smart Dye – AI-Driven Water-Efficient Dyeing System",
-    year: "2025 – Present",
+    title: "SMART DYEING – Data-Driven Resource Optimisation in Industrial Knit Dyeing",
+    year: "Sep 2025 – Present",
     description:
-      "An AI-powered textile dyeing optimization system that predicts color shifts across lab, pilot, and bulk scales, detects dyeing endpoints in real time, and reduces water usage by minimizing re-washing and re-dyeing through closed-loop machine learning control.",
-    tools: ["Machine Learning", "Computer Vision", "Time-Series Analysis", "Predictive Modeling", "Industrial AI", "Textile Engineering", "Water Sustainability"],
+      "BIRDI-funded project with DBL Group aiming at AI-driven closed-loop process control to cut chemical, water and energy use. So far: extracted the dyeing-controller database (98,012 batch records, 97,655 decoded machine telemetry logs), built a verified recipe corpus of 47,403 batches (2021–2026) from 459,267 raw ERP records, installed water flow metering on production machines, and fitted baseline models of water use per kg fabric (cross-validated R² 0.45 linear, 0.54 random forest). Closed-loop control is the next phase.",
+    tools: ["Machine Learning", "Industrial Data Engineering", "SQL", "Process Data", "Textile Engineering", "Sustainability"],
     github: null,
-    highlight: "AI-driven water reduction and shade consistency in industrial dyeing",
-    status: null,
-  },
-  {
-    title: "Spore Detection & Classification",
-    year: "2025",
-    description:
-      "Developed a custom computer vision pipeline to detect and classify multiple fungal spore types from microscopic slide images. Included training workflow with preprocessing, augmentation, training, loss analysis, and evaluation.",
-    tools: ["PyTorch", "EfficientNet-B0", "Transfer Learning", "Image Processing"],
-    github: "https://github.com/Tinonturja",
-    highlight: "Multi-class fungal spore classification from microscopy images",
+    highlight: "Plant-scale dyeing data toward closed-loop chemical, water and energy reduction",
     status: null,
   },
   {
@@ -34,23 +24,13 @@ const projects = [
     status: "In Progress",
   },
   {
-    title: "Automated Textile Quality Inspection",
-    year: "2024",
-    description:
-      "Developed a defect detection system for GSM Textile Company using EfficientNet in PyTorch. Automated the classification of dyeing faults in real production lines, reducing manual inspection time.",
-    tools: ["Computer Vision", "PyTorch", "EfficientNet", "Industrial AI"],
-    github: "https://github.com/Tinonturja",
-    highlight: "Industrial AI for real-time defect detection",
-    status: null,
-  },
-  {
     title: "Natural Dye-Sensitized Solar Cells",
     year: "2023",
     description:
-      "Fabricated Dye-Sensitized Solar Cells (DSSC) using natural photosensitizers extracted from Blue Pea flower petals and Dragon Fruit flesh. Constructed the photovoltaic setup and achieved an open-circuit voltage of 229.1 mV. Analyzed the photoelectrochemical function under the supervision of faculty at BUTEX.",
+      "Undergraduate group thesis: extracted natural photosensitizers from blue pea petals and dragon fruit, characterised them by UV-Vis and FTIR, fabricated dye-sensitized solar cells and measured open-circuit voltage and short-circuit current under the supervision of faculty at BUTEX.",
     tools: ["Renewable Energy", "Material Science", "Research"],
     github: null,
-    highlight: "Achieved 229.1 mV open-circuit voltage",
+    highlight: "Natural-dye photosensitizers for dye-sensitized solar cells",
     status: null,
   },
 ];

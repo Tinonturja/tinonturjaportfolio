@@ -9,7 +9,7 @@ const publications = [
       "Interfacial Mechanisms of Reactive Dye Adsorption on a Waste-Cotton Derived PVA/TiO₂/Cellulose Biofilm: A Molecular Dynamics and Physics-Informed Predictive Framework",
     authors:
       "Md Shajjad Khan Faisal, Tinon Turja Majumder, Kazi Sirajul Islam, Sk. Mainuddin, Mohammad Forhad Hossain, Niger Sultana, Mahmudul Hasan",
-    status: "Preprint · ChemRxiv",
+    status: "Preprint · Under review",
     description:
       "My contribution: an inverse physics-informed neural network (PyTorch) to model reactive-dye adsorption on a sustainable, waste-cotton derived biofilm. The inverse PINN — constrained by the PSO rate law — outperformed five other benchmarked ML models (leave-one-out R² = 0.989), alongside strong classical fits (PSO kinetics R² = 0.998, Freundlich isotherm R² = 0.978). The biofilm removed up to 49% of a reactive azo dye within 170 minutes.",
     tags: [
@@ -18,6 +18,22 @@ const publications = [
       "Sustainable Materials",
     ],
     link: "https://doi.org/10.26434/chemrxiv.15008049/v1",
+    linkLabel: "View Preprint",
+  },
+  {
+    title:
+      "From Prediction to Process Control: A Critical Review of Machine Learning in Reactive Dyeing of Cotton",
+    authors: "Sk. Mainuddin, Tinon Turja Majumder*, Md Shajjad Khan Faisal (*corresponding author)",
+    status: "Preprint · Submitted",
+    description:
+      "Critical review of machine learning in reactive exhaust dyeing of cotton. Argues that the field must move from offline prediction of shade and recipe to learned closed-loop process control if it is to reduce chemical, water and energy use. Submitted to Process Safety and Environmental Protection.",
+    tags: [
+      "Machine Learning",
+      "Process Control",
+      "Reactive Dyeing",
+      "Sustainable Manufacturing",
+    ],
+    link: "https://doi.org/10.26434/chemrxiv.15009673/v2",
     linkLabel: "View Preprint",
   },
   {

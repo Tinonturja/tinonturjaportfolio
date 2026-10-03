@@ -4,9 +4,9 @@ const experience = [
   {
     role: "Lead Research Assistant",
     company: "Smart Dyeing Project — ADB/BIRDI-funded Research Initiative",
-    period: "May 2026 – Present",
+    period: "March 2026 – Present",
     description:
-      "Leading AI/ML modeling for an industrial water-efficient reactive-dyeing system: predictive models for color-shift across lab, pilot, and bulk scales, real-time dyeing-endpoint detection, and physics-informed models coupling dye-adsorption kinetics with deep learning. This work underlies a preprint manuscript on reactive-dye adsorption biofilms and a second manuscript in preparation.",
+      "Lead research assistant on an industrial project (PI: Prof. Dr. Mohammad Forhad Hossain; partner: DBL Group) aiming at AI-driven closed-loop control to reduce chemical, water and energy use in knit dyeing. Built the data pipeline (controller database, decoded machine telemetry, a 47,403-batch verified recipe corpus), installed water flow metering on production machines, and developed baseline resource-prediction models. Earlier (Sep 2025 – Feb 2026) wrote and defended the funded proposal through four BIRDI review rounds.",
   },
   {
     role: "Part-Time Lab Lecturer & External Examinee",
