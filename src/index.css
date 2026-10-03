@@ -3,12 +3,43 @@
 @tailwind utilities;
 
 /*
- * Design tokens — dark research theme.
- * Near-black ground, off-white text, one muted gold accent used sparingly
- * (links, small markers, the method figure). Values are HSL triplets.
+ * Design tokens. Light theme is the default (white ground, ink text, muted brown accent).
+ * A dark theme is available through the toggle in the header (class "dark" on <html>).
+ * Values are HSL triplets.
  */
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 25 20% 13%;
+
+    --card: 30 20% 98%;
+    --card-foreground: 25 20% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 13%;
+
+    --primary: 24 42% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 25% 96%;
+    --secondary-foreground: 25 20% 18%;
+
+    --muted: 30 18% 94%;
+    --muted-foreground: 25 8% 38%;
+
+    --accent: 24 42% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 87%;
+    --input: 30 15% 87%;
+    --ring: 24 42% 30%;
+
+    --radius: 0.5rem;
+    color-scheme: light;
+  }
+
+  .dark {
     --background: 240 6% 6%;
     --foreground: 40 14% 91%;
 
@@ -35,7 +66,6 @@
     --input: 240 4% 17%;
     --ring: 39 52% 64%;
 
-    --radius: 0.5rem;
     color-scheme: dark;
   }
 }

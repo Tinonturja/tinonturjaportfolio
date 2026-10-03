@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Moon, Sun } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 import {
   ME,
@@ -98,6 +99,32 @@ const PinnFigure = () => (
   </figure>
 );
 
+/* ---------- theme toggle (light by default; choice remembered in this browser) ---------- */
+
+const ThemeToggle = () => {
+  const [dark, setDark] = useState(() => typeof document !== "undefined" && document.documentElement.classList.contains("dark"));
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#0e0e10" : "#ffffff");
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch {
+      /* storage unavailable: theme still switches for this visit */
+    }
+  }, [dark]);
+  return (
+    <button
+      type="button"
+      onClick={() => setDark((d) => !d)}
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+      title={dark ? "Light theme" : "Dark theme"}
+      className="rounded p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+    >
+      {dark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+    </button>
+  );
+};
+
 /* ---------- page ---------- */
 
 const navItems = [
@@ -122,7 +149,7 @@ const Academic = () => (
         <a href="#top" className="font-serif text-[1.05rem] font-semibold text-foreground">
           {ME}
         </a>
-        <ul className="hidden gap-6 text-sm text-muted-foreground md:flex">
+        <ul className="ml-auto mr-5 hidden gap-6 text-sm text-muted-foreground md:flex">
           {navItems.map((n) => (
             <li key={n.href}>
               <a href={n.href} className="transition-colors hover:text-foreground">
@@ -136,9 +163,12 @@ const Academic = () => (
             </a>
           </li>
         </ul>
-        <a href={profile.cv} className="text-sm text-accent md:hidden">
-          CV
-        </a>
+        <div className="flex items-center gap-3">
+          <a href={profile.cv} className="text-sm text-accent md:hidden">
+            CV
+          </a>
+          <ThemeToggle />
+        </div>
       </nav>
       <nav aria-label="Sections" className="border-t border-border md:hidden">
         <ul className="mx-auto flex max-w-3xl gap-5 overflow-x-auto px-5 py-2.5 text-sm text-muted-foreground">
