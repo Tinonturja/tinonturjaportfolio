@@ -21,8 +21,6 @@ const skillCategories = [
   {
     title: "Computational & Materials Science",
     skills: [
-      "Molecular Dynamics (GROMACS)",
-      "DFT (Gaussian, B3LYP/6-31G(d))",
       "Adsorption Kinetics (PSO/PFO)",
       "Isotherm Modeling (Freundlich/Langmuir)",
       "Gaussian Process Regression",

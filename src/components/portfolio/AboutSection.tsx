@@ -42,9 +42,8 @@ const AboutSection = () => {
               </span>
               , where I worked directly with dyeing chemistry, biomaterials,
               and process data. That background now feeds my current
-              research: coupling molecular dynamics (GROMACS) and DFT
-              (Gaussian) simulations with physics-informed neural networks to
-              model reactive-dye adsorption on sustainable, waste-derived
+              research: inverse physics-informed neural networks that recover
+              kinetic parameters of reactive-dye adsorption on sustainable, waste-derived
               biofilms — work that has produced a preprint manuscript, with a
               second paper in preparation.
             </p>

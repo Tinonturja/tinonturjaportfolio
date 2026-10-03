@@ -11,11 +11,9 @@ const publications = [
       "Md Shajjad Khan Faisal, Tinon Turja Majumder, Kazi Sirajul Islam, Sk. Mainuddin, Mohammad Forhad Hossain, Niger Sultana, Mahmudul Hasan",
     status: "Preprint · ChemRxiv",
     description:
-      "Couples molecular dynamics and DFT with a physics-informed neural network to model reactive-dye adsorption on a sustainable, waste-cotton derived biofilm. The inverse PINN — constrained by the PSO rate law — outperformed five other benchmarked ML models (leave-one-out R² = 0.989), alongside strong classical fits (PSO kinetics R² = 0.998, Freundlich isotherm R² = 0.978). The biofilm removed up to 49% of a reactive azo dye within 170 minutes.",
+      "My contribution: an inverse physics-informed neural network (PyTorch) to model reactive-dye adsorption on a sustainable, waste-cotton derived biofilm. The inverse PINN — constrained by the PSO rate law — outperformed five other benchmarked ML models (leave-one-out R² = 0.989), alongside strong classical fits (PSO kinetics R² = 0.998, Freundlich isotherm R² = 0.978). The biofilm removed up to 49% of a reactive azo dye within 170 minutes.",
     tags: [
       "Physics-Informed Neural Networks",
-      "Molecular Dynamics",
-      "DFT",
       "Adsorption Kinetics",
       "Sustainable Materials",
     ],

@@ -26,8 +26,8 @@ const HeroSection = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 animate-fade-up delay-200">
               Data Science graduate researcher bridging textile &amp; materials
               engineering, physics-informed machine learning, and computer
-              vision — currently coupling molecular simulation with deep
-              learning to model sustainable dye-adsorption biomaterials, and
+              vision — currently using physics-informed machine learning to model
+              sustainable dye-adsorption biomaterials, and
               building edge AI for industrial quality control.
             </p>
             <p className="text-sm md:text-base text-primary font-medium mb-8 animate-fade-up delay-200">
