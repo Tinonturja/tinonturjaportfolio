@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_30px_hsl(48_100%_50%/0.4)]",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-sm",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_30px_hsl(48_100%_50%/0.4)]",
+        outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:shadow-sm",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent/10 hover:text-accent",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground font-bold px-8 py-4 text-base hover:bg-primary/90 hover:shadow-[0_0_40px_hsl(48_100%_50%/0.5)] hover:-translate-y-0.5",
-        heroOutline: "border-2 border-primary text-primary bg-transparent font-bold px-8 py-4 text-base hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_40px_hsl(48_100%_50%/0.5)] hover:-translate-y-0.5",
+        hero: "bg-primary text-primary-foreground font-bold px-8 py-4 text-base hover:bg-primary/90 hover:shadow-sm hover:-translate-y-0.5",
+        heroOutline: "border-2 border-primary text-primary bg-transparent font-bold px-8 py-4 text-base hover:bg-primary hover:text-primary-foreground hover:shadow-sm hover:-translate-y-0.5",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -9,13 +9,6 @@ const experience = [
       "Lead research assistant on an industrial project (PI: Prof. Dr. Mohammad Forhad Hossain; partner: DBL Group) aiming at AI-driven closed-loop control to reduce chemical, water and energy use in knit dyeing. Built the data pipeline (controller database, decoded machine telemetry, a 47,403-batch verified recipe corpus), installed water flow metering on production machines, and developed baseline resource-prediction models. Earlier (Sep 2025 – Feb 2026) wrote and defended the funded proposal through four BIRDI review rounds.",
   },
   {
-    role: "Part-Time Lab Lecturer & External Examinee",
-    company: "Bangladesh University of Textiles (BUTEX)",
-    period: "January 2025 – Present",
-    description:
-      "Serving as an External Examinee for the course 'Software for Beginners'. Conduct viva and practical examinations to assess student proficiency in basic and advanced Microsoft Office tools (Word, PowerPoint). Evaluate technical competencies and provide structured feedback to students.",
-  },
-  {
     role: "Intern (Industrial Attachment)",
     company: "Fakir Knitwears Ltd.",
     period: "March 2023 – May 2023",
@@ -53,7 +46,7 @@ const ExperienceSection = () => {
             {experience.map((exp, index) => (
               <div
                 key={exp.role}
-                className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-primary before:rounded-full before:shadow-[0_0_10px_hsl(43_74%_55%/0.5)] after:absolute after:left-[5px] after:top-6 after:w-0.5 after:h-[calc(100%-1rem)] after:bg-border last:after:hidden animate-fade-up"
+                className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-primary before:rounded-full after:absolute after:left-[5px] after:top-6 after:w-0.5 after:h-[calc(100%-1rem)] after:bg-border last:after:hidden animate-fade-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <span className="text-sm text-primary font-semibold">

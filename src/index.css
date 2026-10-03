@@ -6,48 +6,46 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%;
-    --foreground: 60 9% 97%;
+    /* Light, subtle academic theme: white background, ink text, one muted navy accent */
+    --background: 0 0% 100%;
+    --foreground: 222 25% 14%;
 
-    --card: 0 0% 9%;
-    --card-foreground: 60 9% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 14%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 60 9% 97%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 14%;
 
-    --primary: 43 74% 55%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 215 50% 32%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 60 9% 97%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 222 25% 20%;
 
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 66%;
+    --muted: 220 16% 95%;
+    --muted-foreground: 220 9% 40%;
 
-    --accent: 43 74% 55%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 215 50% 32%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9% 97%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 21%;
-    --input: 0 0% 21%;
-    --ring: 43 74% 55%;
+    --border: 220 14% 89%;
+    --input: 220 14% 89%;
+    --ring: 215 50% 32%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens */
-    --glow-yellow: 0 0 24px hsl(43 74% 55% / 0.22);
-    --glow-yellow-strong: 0 0 48px hsl(43 74% 55% / 0.38);
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 9%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 11%) 0%, hsl(0 0% 7%) 100%);
-    --gradient-yellow: linear-gradient(135deg, hsl(43 74% 58%) 0%, hsl(38 70% 48%) 100%);
+    /* Custom tokens (kept names, softened values) */
+    --glow-yellow: 0 4px 14px hsl(222 25% 14% / 0.06);
+    --glow-yellow-strong: 0 8px 24px hsl(222 25% 14% / 0.08);
+    --gradient-dark: hsl(0 0% 100%);
+    --gradient-card: hsl(0 0% 100%);
+    --gradient-yellow: linear-gradient(0deg, hsl(215 50% 32%) 0%, hsl(215 50% 32%) 100%);
   }
 
-  .dark {
-    --background: 0 0% 6%;
-    --foreground: 60 9% 97%;
-  }
+
 }
 
 @layer base {
@@ -71,8 +69,7 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-yellow);
+    @apply text-primary;
   }
 
   .card-glow {
@@ -96,7 +93,7 @@
   }
 
   .hover-lift:hover {
-    @apply -translate-y-1;
+    @apply -translate-y-0.5;
     box-shadow: var(--glow-yellow);
   }
 
@@ -186,15 +183,7 @@
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(43 74% 55% / 0.25);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(43 74% 55% / 0.42);
-  }
-}
 
 .pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  box-shadow: 0 6px 20px hsl(222 25% 14% / 0.08);
 }

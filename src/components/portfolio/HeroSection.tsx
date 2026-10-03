@@ -73,7 +73,7 @@ const HeroSection = () => {
                 href="https://github.com/Tinonturja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(43_74%_55%/0.4)]"
+                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-sm"
               >
                 <Github size={20} />
               </a>
@@ -81,13 +81,13 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/tinon-turja-majumder-07b058202/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(43_74%_55%/0.4)]"
+                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-sm"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="mailto:tinonturja@gmail.com"
-                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(43_74%_55%/0.4)]"
+                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-sm"
               >
                 <Mail size={20} />
               </a>
@@ -115,7 +115,7 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2 flex justify-center animate-scale-in">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-primary overflow-hidden pulse-glow">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border border-border overflow-hidden pulse-glow">
                 <img
                   src={profileImage}
                   alt="Tinon Turja Majumder"
