@@ -53,6 +53,36 @@ const Row = ({ when, what, where, detail }: { when: string; what: string; where:
   </li>
 );
 
+/* ---------- figure: SMART DYEING controller-data funnel (numbers recomputed from the controller database) ---------- */
+
+const funnel = [
+  { n: 98012, label: "batch records in the dyeing-controller database (Aug 2025 – Sep 2026)" },
+  { n: 57133, label: "with chemicals dosed; the other 40,879 are mostly washes, strips and re-runs" },
+  { n: 55989, label: "dosed batches that ran for at least 20 minutes" },
+];
+
+const FunnelFigure = () => (
+  <figure className="mt-8 rounded-md border border-border bg-card p-4 sm:p-6">
+    <ol className="space-y-4" aria-label="Controller data cleaning steps">
+      {funnel.map((f) => (
+        <li key={f.n}>
+          <div className="flex items-baseline gap-3">
+            <span className="w-16 shrink-0 text-right font-medium tabular-nums text-foreground">{f.n.toLocaleString("en-US")}</span>
+            <span className="text-sm text-muted-foreground">{f.label}</span>
+          </div>
+          <div className="ml-[4.75rem] mt-1.5 h-2 rounded-full bg-muted" aria-hidden="true">
+            <div className="h-2 rounded-full bg-accent/80" style={{ width: `${(f.n / funnel[0].n) * 100}%` }} />
+          </div>
+        </li>
+      ))}
+    </ol>
+    <figcaption className="mt-4 text-xs leading-relaxed text-muted-foreground">
+      Cleaning the controller records before modelling. Separately, 97,655 machine telemetry logs were decoded, and
+      11,010 batches could be matched to production-report water data for the baseline water model.
+    </figcaption>
+  </figure>
+);
+
 /* ---------- figure: inverse PINN schematic (simplified; matches the method described in the preprint) ---------- */
 
 const Box = ({ children, accent = false }: { children: ReactNode; accent?: boolean }) => (
@@ -339,6 +369,7 @@ const Academic = () => (
             <Label>Status</Label>
             <dd className="text-muted-foreground">Closed-loop control has not been implemented yet; it is the next phase of the project.</dd>
           </dl>
+          <FunnelFigure />
         </article>
 
         <article aria-labelledby="p2" className="mt-14 border-t border-border pt-10">
