@@ -2,50 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap');
-
+/*
+ * Design tokens — dark research theme.
+ * Near-black ground, off-white text, one muted gold accent used sparingly
+ * (links, small markers, the method figure). Values are HSL triplets.
+ */
 @layer base {
   :root {
-    /* Light, subtle academic theme: white background, ink text, one muted brown accent */
-    --background: 0 0% 100%;
-    --foreground: 25 20% 13%;
+    --background: 240 6% 6%;
+    --foreground: 40 14% 91%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 25 20% 13%;
+    --card: 240 5% 9%;
+    --card-foreground: 40 14% 91%;
+    --popover: 240 5% 9%;
+    --popover-foreground: 40 14% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 13%;
+    --primary: 39 52% 64%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 4% 13%;
+    --secondary-foreground: 40 14% 91%;
 
-    --primary: 24 42% 30%;
-    --primary-foreground: 0 0% 100%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 5% 65%;
 
-    --secondary: 30 25% 96%;
-    --secondary-foreground: 25 20% 18%;
+    --accent: 39 52% 64%;
+    --accent-foreground: 240 6% 6%;
 
-    --muted: 30 18% 94%;
-    --muted-foreground: 25 8% 38%;
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 40 14% 91%;
 
-    --accent: 24 42% 30%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 72% 45%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 30 15% 87%;
-    --input: 30 15% 87%;
-    --ring: 24 42% 30%;
+    --border: 240 4% 17%;
+    --input: 240 4% 17%;
+    --ring: 39 52% 64%;
 
     --radius: 0.5rem;
-
-    /* Custom tokens (kept names, softened values) */
-    --glow-yellow: 0 4px 14px hsl(25 20% 13% / 0.06);
-    --glow-yellow-strong: 0 8px 24px hsl(25 20% 13% / 0.08);
-    --gradient-dark: hsl(0 0% 100%);
-    --gradient-card: hsl(0 0% 100%);
-    --gradient-yellow: linear-gradient(0deg, hsl(24 42% 30%) 0%, hsl(24 42% 30%) 100%);
+    color-scheme: dark;
   }
-
-
 }
 
 @layer base {
@@ -55,135 +47,33 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    background: var(--gradient-dark);
+    @apply bg-background font-sans text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
   }
 
-  h1, h2, h3 {
-    @apply font-serif;
-  }
-}
-
-@layer components {
-  .text-gradient {
-    @apply text-primary;
+  ::selection {
+    background: hsl(var(--accent) / 0.3);
   }
 
-  .card-glow {
-    box-shadow: var(--glow-yellow);
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
-  .card-glow-strong {
-    box-shadow: var(--glow-yellow-strong);
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
-
-  .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .section-eyebrow {
-    @apply inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4;
-  }
-
-  .hover-lift {
-    @apply transition-all duration-300 ease-out;
-  }
-
-  .hover-lift:hover {
-    @apply -translate-y-0.5;
-    box-shadow: var(--glow-yellow);
-  }
-
-  .skill-badge {
-    @apply px-4 py-2 rounded-lg bg-secondary text-foreground font-medium text-sm
-           border border-border transition-all duration-300;
-  }
-
-  .skill-badge:hover {
-    @apply border-primary bg-primary/10;
-    box-shadow: var(--glow-yellow);
-  }
-
-  .yellow-underline {
-    @apply relative inline-block;
-  }
-
-  .yellow-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300;
-  }
-
-  .yellow-underline:hover::after {
-    @apply scale-x-100;
-  }
-}
-
-@layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
-  .animate-slide-right {
-    animation: slideRight 0.6s ease-out forwards;
-  }
-
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideRight {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-.pulse-glow {
-  box-shadow: 0 6px 20px hsl(25 20% 13% / 0.08);
 }
