@@ -375,6 +375,24 @@ const Academic = () => (
             </dd>
           </dl>
           <PinnFigure />
+          <figure className="mt-6 rounded-md border border-border bg-card p-4 sm:p-6">
+            <div className="overflow-hidden rounded bg-white">
+              <img
+                src="/figures/wcf-train-vs-loo.webp"
+                width={1400}
+                height={992}
+                loading="lazy"
+                decoding="async"
+                alt="Bar chart of training and leave-one-out R² for six models: Gaussian process regression, polynomial of degree 2 and 3, random forest, XGBoost and the physics-constrained network. The physics-constrained network has the highest leave-one-out R², about 0.99."
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              Training versus leave-one-out R² for the six models compared on the adsorption-kinetics data (figure from
+              the preprint analysis). The physics-constrained network has the highest leave-one-out R² and the smallest
+              gap between training and held-out performance.
+            </figcaption>
+          </figure>
         </article>
       </Section>
 
