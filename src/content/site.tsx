@@ -118,7 +118,7 @@ export const publications: Pub[] = [
       { name: "Mahmudul Hasan" },
     ],
     source: "ChemRxiv preprint",
-    status: "Under review",
+    status: "Under review at Chemical Engineering Journal Advances",
     year: "2026",
     doi: "10.26434/chemrxiv.15008049/v1",
     summary:
