@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tinon Turja Majumder · Research</title>
-    <meta name="description" content="Tinon Turja Majumder: textile engineer and data scientist working on physics-informed machine learning and plant data for industrial dyeing processes. Lead Research Assistant, SMART DYEING, Bangladesh University of Textiles." />
+    <meta name="description" content="Tinon Turja Majumder: machine-learning models constrained by process chemistry and physics, on laboratory and industrial plant data. Lead Research Assistant, SMART DYEING, Bangladesh University of Textiles." />
     <meta name="author" content="Tinon Turja Majumder" />
-    <meta name="theme-color" content="#0f1012" />
+    <meta name="theme-color" content="#ffffff" />
     <script>
-      // Apply the theme before first paint. Dark is the default; light only if chosen in this browser.
+      // Follow the visitor's OS setting unless they chose a theme on this site.
       try {
-        if (localStorage.getItem("theme") === "light") document.documentElement.classList.remove("dark");
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches))
+          document.documentElement.classList.add("dark");
       } catch (e) {}
     </script>
     <link rel="canonical" href="https://tinonturjamajumder.net/" />

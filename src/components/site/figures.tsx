@@ -172,6 +172,26 @@ export const ImageFigure = ({ k }: { k: keyof typeof images }) => {
   );
 };
 
+/** Small preview of a project's main figure, used in lists. Decorative: the list text carries the meaning. */
+export const Thumb = ({ k }: { k: "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin" }) => {
+  if (k === "funnel" || k === "pinn" || k === "gates") {
+    return (
+      <div aria-hidden="true" className="flex h-full w-full flex-col justify-center gap-2 rounded bg-card p-3">
+        {funnel.map((f) => (
+          <div key={f.n} className="h-1.5 rounded-full bg-accent/70" style={{ width: `${(f.n / funnel[0].n) * 100}%` }} />
+        ))}
+        <span className="mt-1 text-[0.6rem] tabular-nums text-muted-foreground">98,012 → 55,989</span>
+      </div>
+    );
+  }
+  const f = images[k];
+  return (
+    <div aria-hidden="true" className="h-full w-full overflow-hidden rounded bg-white">
+      <img src={f.src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
+    </div>
+  );
+};
+
 export const FigureByKey = ({ k }: { k: "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin" }) => {
   if (k === "funnel") return <FunnelFigure />;
   if (k === "pinn") return <PinnFigure />;

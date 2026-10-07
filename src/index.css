@@ -131,3 +131,16 @@
     }
   }
 }
+
+@layer components {
+  .link {
+    @apply text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors hover:decoration-accent;
+  }
+  .list-dash-item {
+    @apply relative pl-5;
+  }
+  .list-dash-item::before {
+    content: "–";
+    @apply absolute left-0 text-muted-foreground;
+  }
+}
