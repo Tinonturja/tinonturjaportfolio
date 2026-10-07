@@ -28,6 +28,24 @@ export const profile = {
 
 export const news: { date: string; text: ReactNode }[] = [
   {
+    date: "Oct 2026",
+    text: (
+      <>
+        Finished a preregistered computer-vision pilot on knitted-fabric video. It stopped at validation under its own
+        stop rule, with the test set unscored; the code, decision log and a{" "}
+        <a
+          href="https://github.com/Tinonturja/tsfabrics_alignment_pilot/blob/main/docs/TECHNICAL_NOTE.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent underline decoration-accent/30 underline-offset-[3px] hover:decoration-accent"
+        >
+          technical note
+        </a>{" "}
+        are public.
+      </>
+    ),
+  },
+  {
     date: "Sep 2026",
     text: (
       <>

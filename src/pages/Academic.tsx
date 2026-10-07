@@ -129,6 +129,46 @@ const PinnFigure = () => (
   </figure>
 );
 
+/* ---------- figure: stage gates of the TSFabrics pilot (status from the repository's decision log) ---------- */
+
+const gates: { name: string; line: string; state: string; kind: "done" | "pass" | "stop" | "never" }[] = [
+  { name: "Freeze", line: "protocol and every constant hashed", state: "27 Sep", kind: "done" },
+  { name: "Calibrate", line: "statistics tested on synthetic data", state: "done", kind: "done" },
+  { name: "Stage 1", line: "code and reference tests, CPU", state: "passed, 144 of 144", kind: "pass" },
+  { name: "Stage 2", line: "detector and validation, GPU", state: "stopped here", kind: "stop" },
+  { name: "Stage 3", line: "one locked run on the test set", state: "never run", kind: "never" },
+];
+
+const gateStyle = {
+  done: "border-muted-foreground/40",
+  pass: "border-foreground/70",
+  stop: "border-2 border-accent",
+  never: "border-dashed border-muted-foreground/40 text-muted-foreground",
+};
+
+const GateFigure = () => (
+  <figure className="mt-8 rounded-md border border-border bg-card p-4 sm:p-6">
+    <ol
+      aria-label="Stages of the pilot: freeze, calibrate, Stage 1 passed, Stage 2 stopped the pilot, Stage 3 never run"
+      className="grid grid-cols-1 gap-2 sm:grid-cols-5 sm:gap-2.5"
+    >
+      {gates.map((g) => (
+        <li key={g.name} className={`rounded-md border px-3 py-2.5 text-sm ${gateStyle[g.kind]}`}>
+          <span className={`block font-medium ${g.kind === "never" ? "" : "text-foreground"}`}>{g.name}</span>
+          <span className="block text-xs text-muted-foreground">{g.line}</span>
+          <span className={`mt-1.5 block text-xs ${g.kind === "stop" ? "font-medium text-accent" : "text-muted-foreground"}`}>
+            {g.state}
+          </span>
+        </li>
+      ))}
+    </ol>
+    <figcaption className="mt-4 text-xs leading-relaxed text-muted-foreground">
+      Each stage could stop the pilot, and a failure could not be repaired by changing the rule that judged it. The
+      pilot stopped at Stage 2, so the test set was never scored.
+    </figcaption>
+  </figure>
+);
+
 /* ---------- theme toggle (light by default; choice remembered in this browser) ---------- */
 
 const ThemeToggle = () => {
@@ -269,7 +309,9 @@ const Academic = () => (
           The question behind my work is how process knowledge and machine learning can be combined so that models of
           industrial processes are accurate with limited data and useful for control. So far I have approached it from
           two sides: identifying physical parameters with physics-informed neural networks on small laboratory datasets,
-          and building the data foundation for learning-based resource reduction in a working dyeing plant.
+          and building the data foundation for learning-based resource reduction in a working dyeing plant. More recently
+          I have started on computer vision for the same kind of physical process, with a preregistered pilot on defect
+          detection in video of moving knitted fabric.
         </p>
         <h3 className="mt-8 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Directions I want to pursue in a PhD</h3>
         <ul className="mt-3 space-y-2.5">
@@ -424,6 +466,61 @@ const Academic = () => (
               gap between training and held-out performance.
             </figcaption>
           </figure>
+        </article>
+
+        <article aria-labelledby="p3" className="mt-14 border-t border-border pt-10">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">2026 · independent project · computer vision</p>
+          <h3 id="p3" className="mt-1.5 font-serif text-[1.25rem] font-semibold">
+            Motion-aligned anomaly detection on knitted-fabric video: a preregistered pilot
+          </h3>
+          <dl className="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-[8rem_1fr]">
+            <Label>Problem</Label>
+            <dd>
+              Defect detectors trained only on normal images assume a still surface under a still camera. On a knitting
+              machine the fabric moves between frames. The pilot asked whether averaging anomaly maps at the same physical
+              location, after aligning frames to the measured fabric motion, reduces false alarms and missed defects.
+            </dd>
+            <Label>Data</Label>
+            <dd className="text-muted-foreground">
+              TSFabrics, a public video dataset of knitted fabric (Ni et al., 2026,{" "}
+              <ExtLink href="https://doi.org/10.1038/s41597-026-06748-9">Scientific Data</ExtLink>): 93,196 frames in 22
+              scenarios. Two folds, split by fabric group so that no fabric appears in both training and test.
+            </dd>
+            <Label>Method</Label>
+            <dd>
+              A PatchCore-style detector (pretrained WRN-50-2 features, coreset memory bank) and frame-to-frame motion
+              estimated by phase correlation. Aligned averaging was compared with single-frame scores, score smoothing and
+              unaligned averaging, plus two controls that break only the correspondence between frames.
+            </dd>
+            <Label>Design</Label>
+            <dd>
+              The protocol and every constant were frozen and hashed before any code ran. Test scenarios sat behind an
+              access gate that refused to read them, and the work ran in three sealed stages on Kaggle, with 144 automated
+              tests checking the code against reference implementations. Every decision is in a dated log.
+            </dd>
+            <Label>Outcome</Label>
+            <dd>
+              Stage 1 passed. Stage 2 stopped at validation: a motion-direction check held on 112 of 200 frame pairs, with
+              190 required. The validation fabric's pattern repeats about every 85 px while it moves about 86 px per frame,
+              so a correct shift and its reverse look almost the same. The protocol forbade changing the check after the
+              fact, so the pilot ended there.
+            </dd>
+            <Label>Limitations</Label>
+            <dd className="text-muted-foreground">
+              There is no test result: the pilot neither supports nor refutes motion alignment. The scenarios for the
+              failed check were chosen without comparing the fabric's pattern period with its per-frame displacement,
+              which a follow-up must do first. Any follow-up is a new study with its own preregistration.
+            </dd>
+            <Label>Output</Label>
+            <dd>
+              <ExtLink href="https://github.com/Tinonturja/tsfabrics_alignment_pilot">code and records</ExtLink>
+              <span aria-hidden="true" className="mx-2 text-muted-foreground/60">/</span>
+              <ExtLink href="https://github.com/Tinonturja/tsfabrics_alignment_pilot/blob/main/docs/TECHNICAL_NOTE.md">technical note</ExtLink>
+              <span aria-hidden="true" className="mx-2 text-muted-foreground/60">/</span>
+              <ExtLink href="https://github.com/Tinonturja/tsfabrics_alignment_pilot/blob/main/docs/decisions/DECISION_LOG.md">decision log</ExtLink>
+            </dd>
+          </dl>
+          <GateFigure />
         </article>
       </Section>
 
