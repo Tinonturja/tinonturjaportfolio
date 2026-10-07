@@ -49,8 +49,8 @@ export const news: { date: string; text: ReactNode }[] = [
     date: "Sep 2026",
     text: (
       <>
-        Review <i>From prediction to process control</i> posted on ChemRxiv and submitted to{" "}
-        <i>Process Safety and Environmental Protection</i>.
+        Review <i>From prediction to process control</i> posted on ChemRxiv; it is now under review at{" "}
+        <i>Chemical Engineering Journal Advances</i>.
       </>
     ),
   },

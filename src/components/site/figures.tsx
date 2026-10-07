@@ -1,3 +1,4 @@
+import type { FigureKey } from "@/content/structure";
 import type { ReactNode } from "react";
 import { inPreparation } from "@/content/site";
 
@@ -142,6 +143,15 @@ const images = {
     caption:
       "Why the pilot stopped. On 200 consecutive frame pairs, warping by the measured shift and by its reverse fit the next frame about equally badly, and usually worse than no warp at all, because the fabric's pattern repeats about once per frame of motion. Drawn from the committed Stage 2 record.",
   },
+  catkinfits: {
+    src: "/figures/catkin-classical-fits.webp",
+    width: 1600,
+    height: 1245,
+    full: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption/blob/master/results/final_analysis/classical_fits.png" as string | undefined,
+    alt: "Four panels. (a) Measured uptake over 170 minutes at 40 mg per litre with four fitted kinetic laws; the burst plus square-root-of-time curve follows the points, pseudo-first- and pseudo-second-order curves level off too early. (b) Fit and leave-one-out error for nine kinetic laws with Akaike weights; burst plus square-root-of-time has the lowest leave-one-out error and weight 0.77. (c) Uptake at 170 minutes against equilibrium concentration, close to a straight line, with Freundlich and linear fits. (d) Histogram of the Freundlich exponent when calibration uncertainty is propagated, spread from about 0.5 to 2.5 and centred near 1.2, overlapping n equals 1.",
+    caption:
+      "Measured kinetic and isotherm data with the classical fits. (a) Kinetics at 40 mg/L; (b) kinetic laws compared by fit and leave-one-out error; (c) uptake against concentration at 170 min; (d) the Freundlich exponent under calibration uncertainty. Figure from the archived code; select the image for full size.",
+  },
   catkin: {
     src: inPreparation.figure.src,
     width: inPreparation.figure.width,
@@ -173,7 +183,7 @@ export const ImageFigure = ({ k }: { k: keyof typeof images }) => {
 };
 
 /** Small preview of a project's main figure, used in lists. Decorative: the list text carries the meaning. */
-export const Thumb = ({ k }: { k: "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin" }) => {
+export const Thumb = ({ k }: { k: FigureKey }) => {
   if (k === "funnel" || k === "pinn" || k === "gates") {
     return (
       <div aria-hidden="true" className="flex h-full w-full flex-col justify-center gap-2 rounded bg-card p-3">
@@ -192,7 +202,7 @@ export const Thumb = ({ k }: { k: "funnel" | "pinn" | "wcf" | "tsfabrics" | "gat
   );
 };
 
-export const FigureByKey = ({ k }: { k: "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin" }) => {
+export const FigureByKey = ({ k }: { k: FigureKey }) => {
   if (k === "funnel") return <FunnelFigure />;
   if (k === "pinn") return <PinnFigure />;
   if (k === "gates") return <GateFigure />;

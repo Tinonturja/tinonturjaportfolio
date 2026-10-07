@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink, Outlet, useLocation, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ME, LAST_UPDATED, profile } from "@/content/site";
 
+/** One-page site: the navigation jumps to sections. No drop-down; on phones the links sit on a second row. */
 const NAV = [
-  { to: "/research", label: "Research" },
-  { to: "/publications", label: "Publications" },
-  { to: "/about", label: "About" },
+  { href: "/#research", label: "Research" },
+  { href: "/#publications", label: "Publications" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 /* ---------- theme: follows the visitor's system setting unless they choose otherwise ---------- */
@@ -45,24 +47,7 @@ const ThemeButton = ({ dark, toggle }: { dark: boolean; toggle: () => void }) =>
 );
 
 export default function Layout() {
-  const { pathname } = useLocation();
   const [dark, setDark] = useTheme();
-  const mainRef = useRef<HTMLElement>(null);
-  const firstLoad = useRef(true);
-
-  // On a new page (not the first load): scroll to top and move focus to the main region.
-  useEffect(() => {
-    if (firstLoad.current) {
-      firstLoad.current = false;
-      return;
-    }
-    window.scrollTo(0, 0);
-    mainRef.current?.focus({ preventScroll: true });
-  }, [pathname]);
-
-  const navCls = ({ isActive }: { isActive: boolean }) =>
-    `relative py-1 transition-colors ${isActive ? "text-foreground after:absolute after:inset-x-0 after:-bottom-[1px] after:h-px after:bg-accent" : "text-muted-foreground hover:text-foreground"}`;
-
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground antialiased">
       <a
@@ -72,18 +57,18 @@ export default function Layout() {
         Skip to content
       </a>
 
-      <header className="border-b border-border">
-        <div className="mx-auto flex max-w-[44rem] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4 sm:px-6">
-          <Link to="/" className="font-serif text-[1.05rem] font-semibold tracking-tight text-foreground">
+      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
+        <div className="mx-auto flex max-w-[44rem] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-3.5 sm:px-6">
+          <a href="/#top" className="font-serif text-[1.05rem] font-semibold tracking-tight text-foreground">
             {ME}
-          </Link>
-          <nav aria-label="Primary" className="flex items-center gap-5 text-sm">
+          </a>
+          <nav aria-label="Sections" className="flex flex-wrap items-center gap-x-3.5 gap-y-1 text-[0.85rem] sm:gap-x-5 sm:text-sm">
             {NAV.map((n) => (
-              <NavLink key={n.to} to={n.to} className={navCls}>
+              <a key={n.href} href={n.href} className="py-1 text-muted-foreground transition-colors hover:text-foreground">
                 {n.label}
-              </NavLink>
+              </a>
             ))}
-            <a href={profile.cv} className="text-muted-foreground transition-colors hover:text-foreground">
+            <a href={profile.cv} className="py-1 text-muted-foreground transition-colors hover:text-foreground">
               CV
             </a>
             <ThemeButton dark={dark} toggle={() => setDark((d) => !d)} />
@@ -91,8 +76,8 @@ export default function Layout() {
         </div>
       </header>
 
-      <main ref={mainRef} id="main" tabIndex={-1} className="flex-1 outline-none">
-        <div key={pathname} className="page-enter mx-auto max-w-[44rem] px-5 pb-20 pt-12 sm:px-6 sm:pt-16">
+      <main id="main" tabIndex={-1} className="flex-1 outline-none">
+        <div className="mx-auto max-w-[44rem] px-5 pb-20 pt-12 sm:px-6 sm:pt-16">
           <Outlet />
         </div>
       </main>

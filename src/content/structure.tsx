@@ -25,7 +25,7 @@ export const researchQuestion =
 
 /* ---------- projects ---------- */
 
-export type FigureKey = "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin";
+export type FigureKey = "funnel" | "pinn" | "wcf" | "tsfabrics" | "gates" | "catkin" | "catkinfits";
 
 export type Project = {
   slug: string;
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       <>
         Single-shot measurements without replicates, one dye, one temperature and no uncertainty quantification. A preregistered simulation
         in a companion study found that, with eight kinetic points, a similar rate-law-constrained network predicted worse than a classical
-        law chosen by AICc (<a href="/projects/kinetic-identifiability" className="link">see that study</a>).
+        law chosen by AICc (<a href="#kinetic-identifiability" className="link">see the next study</a>).
       </>
     ),
     figures: ["pinn", "wcf"],
@@ -128,16 +128,20 @@ export const projects: Project[] = [
   },
   {
     slug: "kinetic-identifiability",
-    title: "Which kinetic law can eight measurements identify? A preregistered simulation",
-    short: "Which kinetic law can eight measurements identify?",
-    meta: "2026 · modelling archive for a manuscript in preparation",
+    title: "Reactive-dye adsorption on a catkin-cellulose film: what eight kinetic points can identify",
+    short: "Dye adsorption on a catkin-cellulose film",
+    meta: "2026 · modelling for a materials manuscript in preparation",
     status: "In preparation",
     summary: {
-      problem: "With eight single measurements, which kinetic law can be identified, and do learned models help?",
-      method: "Eleven kinetic laws compared by leave-one-out error and Akaike weights; a simulation of the sampling design, with the protocol written before any result was computed.",
-      role: "Kinetic and isotherm modelling for a materials manuscript in preparation; the modelling archive and simulation.",
-      result: "Physics-informed networks predicted worse than the AICc-selected classical law in all nine conditions (1.2 to 6.5 times its error) and recovered the rate constants in none of 30 replicates.",
-      significance: "A tested limit for my own earlier method: at this data size, classical model selection should be preferred.",
+      problem:
+        "Describe the uptake of a reactive dye (Avitera Light Red SE) by a PVA/TiO₂ film containing cellulose from Saccharum spontaneum flower fibre (catkin), from eight kinetic and five isotherm measurements.",
+      method:
+        "Eleven kinetic laws and three isotherms fitted by nonlinear least squares and compared by leave-one-out error and Akaike weights, with calibration uncertainty carried into the isotherm exponent; then a preregistered simulation of the sampling design that also tested physics-informed networks.",
+      role: "Kinetic and isotherm modelling, the archived analysis and the simulation study. The film was made and characterised by co-authors.",
+      result:
+        "A burst + √t law described the kinetics best (Akaike weight 0.77, leave-one-out RMSE 0.033 mg/g); pseudo-first- and pseudo-second-order laws did not (R² 0.58 and 0.82). 61 % of the 170-min uptake happened in the first 10 min, and uptake was close to proportional to concentration (removal 37–41 % over 20–60 mg/L).",
+      significance:
+        "It sets out what eight single measurements can support: no equilibrium or maximum capacity can be reported. In the simulation, physics-informed networks — the method of my earlier paper — had 1.2 to 6.5 times the error of the AICc-selected classical law at this data size.",
     },
     details: [
       { label: "Manuscript", body: inPreparation.title },
@@ -152,10 +156,11 @@ export const projects: Project[] = [
         ),
       },
       { label: "Scale", body: inPreparation.scale },
-      { label: "Note", body: inPreparation.note.replace("the simulation below shows", "the simulation on this page shows") },
     ],
-    figures: ["catkin"],
-    thumb: "catkin",
+    limitations:
+      "Single measurements without replicates; one concentration and dose for the kinetics and one contact time for the isotherm. The Freundlich exponent (1.21) cannot be told apart from 1 once calibration uncertainty is included (95 % range 0.56–2.23), and the burst + √t form is a description of the measured window, not evidence of a diffusion mechanism.",
+    figures: ["catkinfits", "catkin"],
+    thumb: "catkinfits",
     links: inPreparation.links,
   },
   {
