@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 /*
- * Design tokens. Dark is the default (deep charcoal ground, warm off-white text, one muted brass accent).
- * A light theme is available from the sidebar (class "dark" removed from <html>).
+ * Design tokens. Light theme is the default (white ground, ink text, muted brown accent).
+ * A dark theme is available through the toggle in the header (class "dark" on <html>).
  * Values are HSL triplets.
  */
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 25 20% 13%;
-    --sidebar: 30 20% 97.5%;
 
     --card: 30 20% 98%;
     --card-foreground: 25 20% 13%;
@@ -24,7 +23,7 @@
     --secondary-foreground: 25 20% 18%;
 
     --muted: 30 18% 94%;
-    --muted-foreground: 25 8% 36%;
+    --muted-foreground: 25 8% 38%;
 
     --accent: 24 42% 30%;
     --accent-foreground: 0 0% 100%;
@@ -41,32 +40,31 @@
   }
 
   .dark {
-    --background: 225 9% 6.5%;
-    --foreground: 38 18% 90%;
-    --sidebar: 225 9% 8%;
+    --background: 240 6% 6%;
+    --foreground: 40 14% 91%;
 
-    --card: 225 8% 9%;
-    --card-foreground: 38 18% 90%;
-    --popover: 225 8% 9%;
-    --popover-foreground: 38 18% 90%;
+    --card: 240 5% 9%;
+    --card-foreground: 40 14% 91%;
+    --popover: 240 5% 9%;
+    --popover-foreground: 40 14% 91%;
 
-    --primary: 38 46% 63%;
-    --primary-foreground: 225 9% 6.5%;
-    --secondary: 225 6% 13%;
-    --secondary-foreground: 38 18% 90%;
+    --primary: 39 52% 64%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 4% 13%;
+    --secondary-foreground: 40 14% 91%;
 
-    --muted: 225 6% 14%;
-    --muted-foreground: 225 6% 64%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 38 46% 63%;
-    --accent-foreground: 225 9% 6.5%;
+    --accent: 39 52% 64%;
+    --accent-foreground: 240 6% 6%;
 
-    --destructive: 0 62% 58%;
-    --destructive-foreground: 38 18% 90%;
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 40 14% 91%;
 
-    --border: 225 6% 16.5%;
-    --input: 225 6% 16.5%;
-    --ring: 38 46% 63%;
+    --border: 240 4% 17%;
+    --input: 240 4% 17%;
+    --ring: 39 52% 64%;
 
     color-scheme: dark;
   }
@@ -97,28 +95,6 @@
     border-radius: 2px;
   }
 
-  .page-enter {
-    animation: page-enter 0.32s ease-out both;
-  }
-  .drawer-slide {
-    animation: drawer-slide 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
-  .drawer-fade {
-    animation: fade 0.25s ease-out both;
-  }
-  @keyframes page-enter {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes drawer-slide {
-    from { transform: translateX(-100%); }
-    to { transform: none; }
-  }
-  @keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -129,18 +105,5 @@
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
     }
-  }
-}
-
-@layer components {
-  .link {
-    @apply text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors hover:decoration-accent;
-  }
-  .list-dash-item {
-    @apply relative pl-5;
-  }
-  .list-dash-item::before {
-    content: "–";
-    @apply absolute left-0 text-muted-foreground;
   }
 }

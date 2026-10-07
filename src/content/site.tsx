@@ -143,6 +143,20 @@ export const inPreparation = {
     "Small neural and Gaussian-process corrections on top of the classical law did not improve accuracy over the measured window; the neural one helped only late in the window for one generating law.",
   ],
   scale: "95,000 simulated replicates for the classical models and 270 for the learned models; protocol written before any result was computed.",
+  measured: [
+    "A burst + √t law described the kinetics best of eleven laws compared (Akaike weight 0.77, leave-one-out RMSE 0.033 mg/g). Pseudo-first- and pseudo-second-order laws did not describe the data (R² 0.58 and 0.82 on the measured points).",
+    "Uptake has a fast part, 61 % of the 170-min value within the first 10 min, and a slow part that had not levelled off by 170 min.",
+    "Uptake at 170 min was close to proportional to concentration (removal 37–41 % over 20–60 mg/L). The Freundlich exponent (1.21) cannot be told apart from 1 once calibration uncertainty is included (95 % range 0.56–2.23), so no equilibrium or maximum capacity is reported.",
+  ],
+  fitsFigure: {
+    src: "/figures/catkin-classical-fits.webp",
+    width: 1600,
+    height: 1245,
+    full: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption/blob/master/results/final_analysis/classical_fits.png",
+    alt: "Four panels. (a) Measured uptake over 170 minutes at 40 mg per litre with four fitted kinetic laws; the burst plus square-root-of-time curve follows the points, pseudo-first- and pseudo-second-order curves level off too early. (b) Fit and leave-one-out error for nine kinetic laws with Akaike weights; burst plus square-root-of-time has the lowest leave-one-out error and weight 0.77. (c) Uptake at 170 minutes against equilibrium concentration, close to a straight line, with Freundlich and linear fits. (d) Histogram of the Freundlich exponent when calibration uncertainty is propagated, spread from about 0.5 to 2.5 and overlapping n equals 1.",
+    caption:
+      "Measured kinetic and isotherm data with the classical fits: (a) kinetics at 40 mg/L; (b) kinetic laws compared by fit and leave-one-out error; (c) uptake against concentration at 170 min; (d) the Freundlich exponent under calibration uncertainty. Figure from the archived code.",
+  },
   links: [
     { label: "code and data", href: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption" },
     { label: "software DOI", href: "https://doi.org/10.5281/zenodo.23195584" },
