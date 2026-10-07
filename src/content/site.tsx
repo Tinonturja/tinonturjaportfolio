@@ -134,7 +134,7 @@ export const publications: Pub[] = [
 
 export const inPreparation = {
   title: "Reactive-dye adsorption on a PVA/TiO₂ film containing cellulose from Saccharum spontaneum flower fibre (working description; title not final)",
-  note: "Materials study, manuscript in preparation. My role: kinetic and isotherm modelling.",
+  note: "Materials study, manuscript in preparation. My role: kinetic and isotherm modelling. The physics-informed network I first built for this study is left out of the manuscript because it did not fit these data well; the simulation below shows the same at this data size.",
   summary:
     "The modelling archive re-analyses the kinetic and isotherm data (eleven kinetic laws compared by leave-one-out error and Akaike weights, with calibration uncertainty carried into the isotherm exponent) and adds a preregistered simulation study of the sampling design: with eight single measurements, which kinetic law can be identified, and do learned models help?",
   findings: [
