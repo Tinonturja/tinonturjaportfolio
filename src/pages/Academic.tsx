@@ -520,6 +520,24 @@ const Academic = () => (
               <ExtLink href="https://github.com/Tinonturja/tsfabrics_alignment_pilot/blob/main/docs/decisions/DECISION_LOG.md">decision log</ExtLink>
             </dd>
           </dl>
+          <figure className="mt-8 rounded-md border border-border bg-card p-4 sm:p-6">
+            <div className="overflow-hidden rounded bg-white">
+              <img
+                src="/figures/tsfabrics-at06b.webp"
+                width={1400}
+                height={1140}
+                loading="lazy"
+                decoding="async"
+                alt="Two panels. A strip of 200 frame pairs coloured by outcome shows long runs of both passes and failures. A scatter of the error after warping by the measured shift against the error after warping by its reverse, both relative to no warp, shows points close to the diagonal and mostly above 1 on both axes: 112 pairs hold, 88 fail, and no warp beats both in 158 pairs."
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              Why the pilot stopped. On 200 consecutive frame pairs, warping by the measured shift and by its reverse fit
+              the next frame about equally badly, and usually worse than no warp at all, because the fabric's pattern
+              repeats about once per frame of motion. Drawn from the committed Stage 2 record.
+            </figcaption>
+          </figure>
           <GateFigure />
         </article>
       </Section>
