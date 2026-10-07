@@ -96,7 +96,7 @@ export const publications: Pub[] = [
     title: "From prediction to process control: a critical review of machine learning in reactive dyeing of cotton",
     authors: [{ name: "Sk. Mainuddin" }, { name: ME, corresponding: true }, { name: "Md Shajjad Khan Faisal" }],
     source: "ChemRxiv preprint",
-    status: "Submitted to Process Safety and Environmental Protection",
+    status: "Under review at Chemical Engineering Journal Advances",
     year: "2026",
     doi: "10.26434/chemrxiv.15009673/v2",
     summary:
