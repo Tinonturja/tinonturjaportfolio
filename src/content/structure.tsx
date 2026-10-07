@@ -18,7 +18,7 @@ export const oneLine =
   "I build machine-learning models that are constrained by the chemistry and physics of a process, using laboratory and industrial plant data.";
 
 export const bio =
-  "I am Lead Research Assistant on SMART DYEING at Bangladesh University of Textiles, where I lead the data and modelling work for a project on closed-loop control to cut chemical, water and energy use in industrial knit dyeing. I trained as a textile engineer in dyes and chemicals and then completed an M.Sc. in computer science with a data-science concentration. I am preparing to apply for PhD programs.";
+  "I am Lead Research Assistant on SMART DYEING at Bangladesh University of Textiles, where I lead the data and modelling work for a project on closed-loop control to cut chemical, water and energy use in industrial knit dyeing. I trained as a textile engineer in dyes and chemicals and then completed an M.Sc. in computer science with a data-science concentration.";
 
 export const researchQuestion =
   "How can process knowledge and machine learning be combined so that models of industrial processes are accurate with limited data and useful for control?";

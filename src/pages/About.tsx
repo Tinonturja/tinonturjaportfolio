@@ -1,11 +1,11 @@
-import { profile, education, interests } from "@/content/site";
+import { profile, education } from "@/content/site";
 import { roles } from "@/content/structure";
 import { PageTitle, H2, LinkRow, usePageMeta } from "@/components/site/bits";
 
 const About = () => {
   usePageMeta(
     "About",
-    "Background, research experience, education and PhD research directions of Tinon Turja Majumder.",
+    "Background, research experience and education of Tinon Turja Majumder.",
     "/about",
   );
   return (
@@ -45,15 +45,6 @@ const About = () => {
               <p className="font-medium">{e.what}</p>
               <p className="text-sm text-muted-foreground">{e.where}</p>
             </div>
-          </li>
-        ))}
-      </ul>
-
-      <H2>What I want to work on in a PhD</H2>
-      <ul className="space-y-2.5">
-        {interests.map((t) => (
-          <li key={t} className="list-dash-item leading-relaxed text-foreground/85">
-            {t}
           </li>
         ))}
       </ul>
