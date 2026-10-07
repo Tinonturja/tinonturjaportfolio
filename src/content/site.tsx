@@ -135,6 +135,28 @@ export const publications: Pub[] = [
 export const inPreparation = {
   title: "Reactive-dye adsorption on a PVA/TiO₂ film containing cellulose from Saccharum spontaneum flower fibre (working description; title not final)",
   note: "Materials study, manuscript in preparation. My role: kinetic and isotherm modelling.",
+  summary:
+    "The modelling archive re-analyses the kinetic and isotherm data (eleven kinetic laws compared by leave-one-out error and Akaike weights, with calibration uncertainty carried into the isotherm exponent) and adds a preregistered simulation study of the sampling design: with eight single measurements, which kinetic law can be identified, and do learned models help?",
+  findings: [
+    "With the eight sampling times used and noise at the level of the real fits, the law that generated the simulated data was recovered in 4 % (two-site first-order) to 96 % (pseudo-first-order) of replicates. Placing points early in the run helped more than placing them late.",
+    "In all nine conditions tested, a physics-informed neural network of the same family as my earlier work predicted worse than the classical law chosen by AICc, with 1.2 to 6.5 times its error, and recovered the rate constants in none of the 30 replicates at eight points.",
+    "Small neural and Gaussian-process corrections on top of the classical law did not improve accuracy over the measured window; the neural one helped only late in the window for one generating law.",
+  ],
+  scale: "95,000 simulated replicates for the classical models and 270 for the learned models; protocol written before any result was computed.",
+  links: [
+    { label: "code and data", href: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption" },
+    { label: "software DOI", href: "https://doi.org/10.5281/zenodo.23195584" },
+    { label: "simulation protocol", href: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption/blob/master/results/design_density/PROTOCOL.md" },
+  ],
+  figure: {
+    src: "/figures/catkin-learners-vs-classical.webp",
+    width: 1600,
+    height: 818,
+    full: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption/blob/master/results/design_density/fig3_learners_vs_classical.png",
+    alt: "Dot plot of the median relative change in prediction error of five learners against the classical law chosen by AICc, for three data-generating laws, three sampling densities, inside the measured window and extrapolated. Both physics-informed networks lie well to the left of zero, meaning larger error, in every panel; the neural and Gaussian-process residual corrections sit at about zero.",
+    caption:
+      "Learned models against the AICc-selected classical law on simulated kinetic data. Left of zero means a larger error than the classical law. Figure from the archived code.",
+  },
 };
 
 export const experience = [

@@ -375,6 +375,39 @@ const Academic = () => (
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">In preparation</p>
           <p className="mt-1.5">{inPreparation.title}</p>
           <p className="text-sm text-muted-foreground">{inPreparation.note}</p>
+          <p className="mt-3 text-[0.95rem]">{inPreparation.summary}</p>
+          <ul className="mt-3 space-y-2">
+            {inPreparation.findings.map((f) => (
+              <li key={f} className="relative pl-5 text-[0.95rem] before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-2.5 before:bg-accent">
+                {f}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-sm text-muted-foreground">{inPreparation.scale}</p>
+          <p className="mt-2 text-sm">
+            {inPreparation.links.map((l, i) => (
+              <span key={l.label}>
+                {i > 0 && <span aria-hidden="true" className="mx-2 text-muted-foreground/60">/</span>}
+                <ExtLink href={l.href}>{l.label}</ExtLink>
+              </span>
+            ))}
+          </p>
+          <figure className="mt-6 rounded-md border border-border bg-card p-4 sm:p-6">
+            <a href={inPreparation.figure.full} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded bg-white">
+              <img
+                src={inPreparation.figure.src}
+                width={inPreparation.figure.width}
+                height={inPreparation.figure.height}
+                loading="lazy"
+                decoding="async"
+                alt={inPreparation.figure.alt}
+                className="h-auto w-full"
+              />
+            </a>
+            <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              {inPreparation.figure.caption} Select the image for full size.
+            </figcaption>
+          </figure>
         </div>
       </Section>
 
@@ -440,7 +473,9 @@ const Academic = () => (
             <dd className="text-muted-foreground">
               Single-shot measurements without replicates, one dye, one temperature and no uncertainty quantification. In a
               companion study on a second biofilm, a joint kinetics–isotherm network fitted well in-sample but generalised
-              poorly to held-out isotherm points, which is why I report leave-one-out results rather than training fit.
+              poorly to held-out isotherm points, which is why I report leave-one-out results rather than training fit. A
+              preregistered simulation in that companion study found that, with eight kinetic points, a similar rate-law-constrained
+              network predicted worse than a classical law chosen by AICc (see In preparation above).
             </dd>
             <Label>Output</Label>
             <dd>
