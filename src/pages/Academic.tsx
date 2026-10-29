@@ -317,7 +317,7 @@ const Academic = () => (
       {/* ---------- publications ---------- */}
       <Section id="publications" title="Publications">
         <p className="-mt-2 mb-6 text-sm text-muted-foreground">
-          Preprints. Neither has been peer-reviewed yet. * corresponding author
+          Preprints. None has been peer-reviewed yet. * corresponding author
         </p>
         <ol className="space-y-9">
           {publications.map((p) => (
@@ -363,7 +363,7 @@ const Academic = () => (
           ))}
         </ol>
         <div className="mt-9 border-t border-border pt-6">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">In preparation</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Preprint details: Saccharum spontaneum film</p>
           <p className="mt-1.5">{inPreparation.title}</p>
           <p className="text-sm text-muted-foreground">{inPreparation.note}</p>
           <p className="mt-3 text-[0.95rem]">{inPreparation.summary}</p>
@@ -491,7 +491,7 @@ const Academic = () => (
               companion study on a second biofilm, a joint kinetics–isotherm network fitted well in-sample but generalised
               poorly to held-out isotherm points, which is why I report leave-one-out results rather than training fit. A
               preregistered simulation in that companion study found that, with eight kinetic points, a similar rate-law-constrained
-              network predicted worse than a classical law chosen by AICc (see In preparation above).
+              network predicted worse than a classical law chosen by AICc (see the Saccharum spontaneum preprint above).
             </dd>
             <Label>Output</Label>
             <dd>

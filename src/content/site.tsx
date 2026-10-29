@@ -31,6 +31,15 @@ export const news: { date: string; text: ReactNode }[] = [
     date: "Oct 2026",
     text: (
       <>
+        Preprint on kinetic model discrimination for reactive-dye adsorption on a <i>Saccharum spontaneum</i> cellulose
+        PVA/TiO₂ film posted on ChemRxiv (27 October); it has not yet been peer reviewed.
+      </>
+    ),
+  },
+  {
+    date: "Oct 2026",
+    text: (
+      <>
         Finished a preregistered computer-vision pilot on knitted-fabric video. It stopped at validation under its own
         stop rule, with the test set unscored; the code, decision log and a{" "}
         <a
@@ -92,6 +101,32 @@ export type Pub = {
 /** Titles, author order, year and DOI verified against Crossref (2026-10-03). Status lines are as reported by the author. */
 export const publications: Pub[] = [
   {
+    kind: "Article",
+    title:
+      "Reactive dye adsorption and recovery using a PVA/TiO2 film containing Saccharum spontaneum flower-fibre cellulose: kinetic model discrimination beyond pseudo-second-order",
+    authors: [
+      { name: "Kazi Sirajul Islam" },
+      { name: "Md Shajjad Khan Faisal", corresponding: true },
+      { name: ME, corresponding: true },
+      { name: "Sk. Mainuddin" },
+      { name: "Mahmudul Hasan" },
+      { name: "Mohammad Forhad Hossain" },
+      { name: "Niger Sultana" },
+      { name: "Ashraful Alam Aulia" },
+    ],
+    source: "ChemRxiv preprint, posted 27 October 2026",
+    status: "Preprint, not yet peer reviewed",
+    year: "2026",
+    doi: "10.26434/chemrxiv.15011158/v1",
+    summary:
+      "Compares eleven kinetic laws and three isotherms for reactive-dye uptake on a film made from Saccharum spontaneum flower-fibre cellulose, PVA and TiO\u2082, with leave-one-out validation and calibration uncertainty carried through. A fast initial uptake followed by slow intraparticle diffusion described the kinetics best (Akaike weight 0.77), and a preregistered simulation of 95,000 synthetic experiments found that a physics-informed network did not improve on the classical description at this data density.",
+    role: "Kinetic and isotherm modelling, and the simulation study; corresponding author.",
+    links: [
+      { label: "preprint", href: "https://doi.org/10.26434/chemrxiv.15011158/v1" },
+      { label: "code and data", href: "https://github.com/Tinonturja/Catkin_Biofilm_Adsorption" },
+    ],
+  },
+  {
     kind: "Review",
     title: "From prediction to process control: a critical review of machine learning in reactive dyeing of cotton",
     authors: [{ name: "Sk. Mainuddin" }, { name: ME, corresponding: true }, { name: "Md Shajjad Khan Faisal" }],
@@ -133,8 +168,8 @@ export const publications: Pub[] = [
 ];
 
 export const inPreparation = {
-  title: "Reactive-dye adsorption on a PVA/TiO₂ film containing cellulose from Saccharum spontaneum flower fibre (working description; title not final)",
-  note: "Materials study, manuscript in preparation. My role: kinetic and isotherm modelling. The physics-informed network I first built for this study is left out of the manuscript because it did not fit these data well; the simulation below shows the same at this data size.",
+  title: "Reactive dye adsorption and recovery using a PVA/TiO2 film containing Saccharum spontaneum flower-fibre cellulose: kinetic model discrimination beyond pseudo-second-order",
+  note: "Posted on ChemRxiv on 27 October 2026; not yet peer reviewed. The physics-informed network I first built for this study did not fit these data well; the preregistered simulation below shows the same at this data size.",
   summary:
     "The modelling archive re-analyses the kinetic and isotherm data (eleven kinetic laws compared by leave-one-out error and Akaike weights, with calibration uncertainty carried into the isotherm exponent) and adds a preregistered simulation study of the sampling design: with eight single measurements, which kinetic law can be identified, and do learned models help?",
   findings: [
