@@ -28,6 +28,32 @@ export const profile = {
 
 export const news: { date: string; text: ReactNode }[] = [
   {
+    date: "Nov 2026",
+    text: (
+      <>
+        Released the code, frozen protocols and results of a pre-registered study of how crop coverage, tiling and
+        memory banks change anomaly-localization scores on four datasets (
+        <a href="https://github.com/Tinonturja/raw-fabrid-study" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/30 underline-offset-[3px] hover:decoration-accent">
+          GitHub
+        </a>
+        ,{" "}
+        <a href="https://doi.org/10.5281/zenodo.24459807" target="_blank" rel="noopener noreferrer" className="text-accent underline decoration-accent/30 underline-offset-[3px] hover:decoration-accent">
+          Zenodo
+        </a>
+        ). The manuscript is in preparation.
+      </>
+    ),
+  },
+  {
+    date: "Oct 2026",
+    text: (
+      <>
+        Submitted a manuscript on the performance, data-leak protection and privacy policies of five free VPN services
+        to <i>Security and Privacy</i> (Wiley); it is under review.
+      </>
+    ),
+  },
+  {
     date: "Oct 2026",
     text: (
       <>

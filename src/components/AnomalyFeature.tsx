@@ -21,7 +21,7 @@ const AnomalyFeature = () => (
   <section
     id="anomaly-study"
     aria-labelledby="anomaly-study-h"
-    className="mt-10 scroll-mt-28 overflow-hidden rounded-lg border border-border bg-card md:scroll-mt-20"
+    className="mt-8 scroll-mt-28 overflow-hidden rounded-lg border border-border bg-card md:scroll-mt-20"
   >
     <div className="h-1.5 w-full bg-accent" aria-hidden="true" />
     <div className="px-5 py-7 sm:px-8 sm:py-9">

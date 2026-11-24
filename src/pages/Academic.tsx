@@ -1,7 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Moon, Sun } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
-import VpnFeature from "@/components/VpnFeature";
 import AnomalyFeature from "@/components/AnomalyFeature";
 import {
   ME,
@@ -199,7 +198,6 @@ const ThemeToggle = () => {
 /* ---------- page ---------- */
 
 const navItems = [
-  { href: "#vpn-study", label: "Featured" },
   { href: "#research", label: "Research" },
   { href: "#publications", label: "Publications" },
   { href: "#projects", label: "Projects" },
@@ -305,10 +303,6 @@ const Academic = () => (
         </ul>
       </Section>
 
-      {/* ---------- featured study ---------- */}
-      <VpnFeature />
-      <AnomalyFeature />
-
       {/* ---------- research ---------- */}
       <Section id="research" title="Research">
         <p>
@@ -317,8 +311,10 @@ const Academic = () => (
           two sides: identifying physical parameters with physics-informed neural networks on small laboratory datasets,
           and building the data foundation for learning-based resource reduction in a working dyeing plant. More recently
           I have started on computer vision for the same kind of physical process, with a preregistered pilot on defect
-          detection in video of moving knitted fabric.
+          detection in video of moving knitted fabric, and a pre-registered study of how crop coverage, tiling and
+          memory banks change anomaly-localization scores on four datasets.
         </p>
+        <AnomalyFeature />
       </Section>
 
       {/* ---------- publications ---------- */}
