@@ -107,3 +107,7 @@
     }
   }
 }
+
+/* Chart series colours for the featured VPN study (validated pair, light and dark). */
+:root { --vpn-down: #b0561f; --vpn-up: #0f86b8; }
+.dark { --vpn-down: #d27a24; --vpn-up: #2f9bd0; }

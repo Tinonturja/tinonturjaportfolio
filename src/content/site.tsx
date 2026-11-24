@@ -9,7 +9,7 @@
 import type { ReactNode } from "react";
 
 export const ME = "Tinon Turja Majumder";
-export const LAST_UPDATED = "October 2026";
+export const LAST_UPDATED = "November 2026";
 
 export const profile = {
   name: ME,
@@ -92,7 +92,7 @@ export type Pub = {
   source: string; // where it can be read now
   status: string; // exact current status
   year: string;
-  doi?: string;
+  doi?: string; // omit for work with no DOI yet
   summary: string;
   role: string;
   links: { label: string; href: string }[];
@@ -164,6 +164,18 @@ export const publications: Pub[] = [
       { label: "code", href: "https://github.com/Tinonturja/WCF_Biofilm_Adsorption" },
       { label: "software DOI", href: "https://doi.org/10.5281/zenodo.21952872" },
     ],
+  },
+  {
+    kind: "Manuscript",
+    title: "Unmasking Free VPNs: An Empirical Evaluation of Performance, Data-Leak Protection and Privacy Policies of Five Popular Services",
+    authors: [{ name: "Fawaz Farabi" }, { name: ME, corresponding: true }, { name: "Mohammad Forhad Hossain" }],
+    source: "Submitted manuscript, October 2026",
+    status: "Under review at Security and Privacy (Wiley)",
+    year: "2026",
+    summary:
+      "An empirical comparison of five popular free VPN services on performance, protection against data leaks, and what their privacy policies say.",
+    role: "Coding and comparative analysis of the VPN services; corresponding author.",
+    links: [],
   },
 ];
 

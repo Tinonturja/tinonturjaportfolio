@@ -1,6 +1,8 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Moon, Sun } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import VpnFeature from "@/components/VpnFeature";
+import AnomalyFeature from "@/components/AnomalyFeature";
 import {
   ME,
   LAST_UPDATED,
@@ -197,6 +199,7 @@ const ThemeToggle = () => {
 /* ---------- page ---------- */
 
 const navItems = [
+  { href: "#vpn-study", label: "Featured" },
   { href: "#research", label: "Research" },
   { href: "#publications", label: "Publications" },
   { href: "#projects", label: "Projects" },
@@ -302,6 +305,10 @@ const Academic = () => (
         </ul>
       </Section>
 
+      {/* ---------- featured study ---------- */}
+      <VpnFeature />
+      <AnomalyFeature />
+
       {/* ---------- research ---------- */}
       <Section id="research" title="Research">
         <p>
@@ -317,19 +324,23 @@ const Academic = () => (
       {/* ---------- publications ---------- */}
       <Section id="publications" title="Publications">
         <p className="-mt-2 mb-6 text-sm text-muted-foreground">
-          Preprints. None has been peer-reviewed yet. * corresponding author
+          Preprints and one submitted manuscript. None has been peer-reviewed yet. * corresponding author
         </p>
         <ol className="space-y-9">
           {publications.map((p) => (
-            <li key={p.doi}>
+            <li key={p.doi ?? p.title}>
               <article>
                 <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
                   {p.kind} · {p.year}
                 </p>
                 <h3 className="mt-1.5 font-serif text-[1.15rem] font-semibold leading-snug">
-                  <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                    {p.title}
-                  </a>
+                  {p.doi ? (
+                    <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                      {p.title}
+                    </a>
+                  ) : (
+                    p.title
+                  )}
                 </h3>
                 <p className="mt-1.5 text-sm text-muted-foreground">
                   {p.authors.map((a, i) => (
@@ -343,7 +354,7 @@ const Academic = () => (
                   ))}
                 </p>
                 <p className="mt-1 text-sm">
-                  <span className="text-muted-foreground">{p.source}, DOI {p.doi}. </span>
+                  <span className="text-muted-foreground">{p.source}{p.doi ? `, DOI ${p.doi}` : ""}. </span>
                   <span className="text-foreground">{p.status}.</span>
                 </p>
                 <p className="mt-3 text-[0.95rem]">{p.summary}</p>
